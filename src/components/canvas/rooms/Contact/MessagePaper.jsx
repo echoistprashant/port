@@ -149,13 +149,16 @@ const SmoothButton = ({ texture, onClick, position, size, text, fontPath }) => {
 // Web3Forms API Key — loaded from environment variable or default public key
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '5c9e61a7-e64c-4dfb-94ab-961a642cf74f';
 
-// Domains allowed to submit the form (includes localhost for dev & testing)
+// Domains allowed to submit the form (includes localhost, personal domain, and cloud hosting)
 const ALLOWED_ORIGINS = [
     'localhost',
     '127.0.0.1',
-    'itomdev.com',
-    'www.itomdev.com',
-    'portfolio-itom.pages.dev',
+    'prashantyadav.dev',
+    'www.prashantyadav.dev',
+    'vercel.app',
+    'netlify.app',
+    'pages.dev',
+    'github.io',
 ];
 
 // ═══════════════════════════════════════════════════════════════════════

@@ -352,7 +352,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                TOMASZ SZMAJDA
+                PRASHANT YADAV
             </Text>
 
             {/* Subtitle - Brand (spreads right) */}
@@ -365,7 +365,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/CabinSketch-Regular.ttf"
             >
-                (ITOM)
+                (AI DEVELOPER)
             </Text>
 
             {/* Avatar on cloud - floating + spreads up-left */}

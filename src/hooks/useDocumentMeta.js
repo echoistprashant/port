@@ -12,28 +12,28 @@ import { useScene } from '../context/SceneContext';
 const ROOM_META = {
     null: {
         path: '/',
-        title: 'ITom — Creative 3D Portfolio',
-        description: 'Interactive 3D developer portfolio by Tomasz "ITom" Szmajda. Explore WebGL experiments, React projects & GSAP animations in a hand-drawn gallery.',
+        title: 'Prashant Yadav | AI Engineer & Full-Stack Developer',
+        description: 'Interactive 3D developer portfolio by Prashant Yadav. Explore AI systems, LLM agents, and full-stack projects in a hand-drawn 3D gallery.',
     },
     about: {
         path: '/about',
-        title: 'About Me — ITom Portfolio',
-        description: 'Learn about Tomasz "ITom" Szmajda — a creative frontend developer specializing in 3D web experiences, React, Three.js, and GSAP animations.',
+        title: 'About Me — Prashant Yadav',
+        description: 'Learn about Prashant Yadav — AI Engineer, Founding Member at Femur Studio, and B.Tech CSE student specializing in LLMs and agentic systems.',
     },
     gallery: {
         path: '/gallery',
-        title: 'Gallery & Projects — ITom Portfolio',
-        description: 'Browse the interactive 3D gallery of web development projects by ITom. Each project is displayed as a hand-drawn card you can flip and explore.',
+        title: 'Projects Gallery — Prashant Yadav',
+        description: 'Browse AI & web development projects by Prashant Yadav: AI Revenue Recovery, Sikhsha AI, Persona Trader, Text-to-SQL Engine, and AI Job Application Agent.',
     },
     studio: {
         path: '/studio',
-        title: 'The Studio — ITom Portfolio',
-        description: 'Explore ITom\'s content studio — YouTube videos, blog posts, and TikToks displayed on floating monitors in an immersive 3D space.',
+        title: 'Studio & Labs — Prashant Yadav',
+        description: 'Explore Prashant Yadav\'s work with Femur Studio, technical milestones, and engineering showcase in an immersive 3D space.',
     },
     contact: {
         path: '/contact',
-        title: 'Contact — ITom Portfolio',
-        description: 'Get in touch with Tomasz "ITom" Szmajda. Find social media links and contact information in this interactive 3D contact room.',
+        title: 'Contact — Prashant Yadav',
+        description: 'Get in touch with Prashant Yadav. Connect on LinkedIn, GitHub, X (@ConstPrashant), or send a message directly.',
     },
 };
 
@@ -82,12 +82,12 @@ export function useDocumentMeta() {
         if (ogDesc) ogDesc.setAttribute('content', meta.description);
 
         const ogUrl = document.querySelector('meta[property="og:url"]');
-        if (ogUrl) ogUrl.setAttribute('content', `https://itomdev.com${meta.path}`);
+        if (ogUrl) ogUrl.setAttribute('content', `https://prashantyadav.dev${meta.path}`);
 
         // Update canonical link to ensure virtual routes are correctly indexable as separate pages
         const canonicalTag = document.querySelector('link[rel="canonical"]');
         if (canonicalTag) {
-            canonicalTag.setAttribute('href', `https://itomdev.com${meta.path}`);
+            canonicalTag.setAttribute('href', `https://prashantyadav.dev${meta.path}`);
         }
 
         // Push to browser history (only if not handling a popstate event and room actually changed)
