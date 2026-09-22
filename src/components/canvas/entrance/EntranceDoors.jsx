@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Text, useTexture } from '@react-three/drei';
+import { Text, useTexture, Html } from '@react-three/drei';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import '../shaders/RevealMaterial'; // Registers alpha-discard reveal shader
@@ -832,6 +832,37 @@ const EntranceDoors = ({
                     />
                 </mesh>
             </group>
+
+            {/* RESUME BUTTON (Just Above Window) */}
+            {!isOpen && !isAnimating && (
+                <group position={[2.5, 0.98, 0.35]}>
+                    <Html
+                        center
+                        zIndexRange={[100, 0]}
+                        style={{
+                            pointerEvents: 'auto',
+                            userSelect: 'none'
+                        }}
+                    >
+                        <a
+                            href="/resume.pdf"
+                            download="Prashant_Yadav_Resume.pdf"
+                            className="window-resume-btn"
+                            title="Download Prashant Yadav's Resume (PDF)"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <svg viewBox="0 0 24 24" className="icon-resume">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="12" y1="18" x2="12" y2="12" />
+                                <polyline points="9 15 12 18 15 15" />
+                            </svg>
+                            <span className="resume-label">RESUME</span>
+                        </a>
+                    </Html>
+                </group>
+            )}
 
             {/* DUCK POT (Right Side - Under Window) */}
             <group position={[2.5, floorY + 0.45, 0.4]}>

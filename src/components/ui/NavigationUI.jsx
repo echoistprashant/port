@@ -233,28 +233,27 @@ const NavigationUI = () => {
                 </button>
             )}
 
-            {/* Right side controls - Always visible */}
-            <div className={`nav-controls ${isMenuOpen || isAudioMenuOpen ? 'menu-open' : ''} ${isUIHidden ? 'ui-hidden' : ''}`}>
-                {/* Resume Download Button */}
-                <a
-                    href="/resume.pdf"
-                    download="Prashant_Yadav_Resume.pdf"
-                    className="nav-btn resume-btn"
-                    aria-label="Download Resume"
-                    title="Download Prashant Yadav's Resume (PDF)"
-                >
-                    <svg viewBox="0 0 24 24" className="icon-resume">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                        <line x1="12" y1="18" x2="12" y2="12" />
-                        <polyline points="9 15 12 18 15 15" />
-                    </svg>
-                    <span className="resume-label">RESUME</span>
-                </a>
+            {/* Right side controls - Only visible after entering */}
+            {hasEntered && (
+                <div className={`nav-controls ${isMenuOpen || isAudioMenuOpen ? 'menu-open' : ''} ${isUIHidden ? 'ui-hidden' : ''}`}>
+                    {/* Resume Download Button (available in corridor) */}
+                    <a
+                        href="/resume.pdf"
+                        download="Prashant_Yadav_Resume.pdf"
+                        className="nav-btn resume-btn"
+                        aria-label="Download Resume"
+                        title="Download Prashant Yadav's Resume (PDF)"
+                    >
+                        <svg viewBox="0 0 24 24" className="icon-resume">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="12" y1="18" x2="12" y2="12" />
+                            <polyline points="9 15 12 18 15 15" />
+                        </svg>
+                        <span className="resume-label">RESUME</span>
+                    </a>
 
-                {hasEntered && (
-                    <>
-                        {/* Hamburger Menu Button */}
+                    {/* Hamburger Menu Button */}
                         <button
                             className={`nav-btn hamburger-btn ${isMenuOpen ? 'open' : ''}`}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -301,9 +300,8 @@ const NavigationUI = () => {
                                 <path d="M19 9h2V6h-2" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
-                    </>
+                    </div>
                 )}
-            </div>
 
             {/* Map Panel - Drops from top when open */}
             {hasEntered && (

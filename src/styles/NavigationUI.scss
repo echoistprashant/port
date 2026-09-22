@@ -136,6 +136,60 @@
     }
 }
 
+// === RESUME BUTTON JUST ABOVE ENTRANCE WINDOW ===
+.window-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ede8dc;
+    border: 2.5px solid #1a1a1a;
+    border-radius: 22px;
+    padding: 7px 18px 6px 15px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'CabinSketch-Bold', 'CabinSketch', cursive, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 2.5px 3px 0px rgba(26, 26, 26, 0.85);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, box-shadow 0.2s ease;
+    pointer-events: auto;
+
+    .icon-resume {
+        width: 18px;
+        height: 18px;
+        stroke: #1a1a1a;
+        stroke-width: 2.2;
+        fill: none;
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+    }
+
+    .resume-label {
+        line-height: 1;
+        padding-top: 2px;
+    }
+
+    &:hover {
+        background: #fcf9f2;
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 3.5px 5px 0px rgba(26, 26, 26, 0.95);
+
+        .icon-resume {
+            transform: translateY(2px);
+        }
+    }
+
+    &:active {
+        transform: translateY(1px) scale(0.97);
+        box-shadow: 1px 1px 0px rgba(26, 26, 26, 0.9);
+    }
+}
+
 // === BACK BUTTON ===
 .back-btn {
     position: fixed;

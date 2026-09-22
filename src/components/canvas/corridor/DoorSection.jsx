@@ -1253,7 +1253,7 @@ const DoorSection = ({
 
                         {/* "Knock to open" plaque on door face */}
                         <group
-                            position={[doorMeshX, 0.22, 0.02]}
+                            position={[doorMeshX, 0.78, 0.02]}
                             onClick={handleClick}
                             onPointerEnter={handlePointerEnter}
                             onPointerLeave={handlePointerLeave}
