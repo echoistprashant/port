@@ -205,7 +205,7 @@ export const ABOUT_TEXTURES = [
     '/textures/about/milestone_femur.webp',
     // Journey islands
     '/textures/about/uowyspa.webp',
-    '/textures/about/freelancewyspa.webp',
+    '/textures/about/femurwyspa.webp',
     // Skill balloons - large
     '/textures/about/reactduzybalon.webp',
     '/textures/about/reactduzybalon_painted.webp',

@@ -417,15 +417,15 @@ const AWARDS_DATA = {
     featured: {
         id: 'award-featured',
         layout: 'certificate_grid',
-        title: 'Featured Milestones & Projects',
+        title: 'Featured Milestones & Achievements',
         items: [
-            { label: 'Founding Member - Femur Studio', date: 'March 2026', image: '/textures/about/milestone_femur.webp', url: 'https://femur.studio/' },
-            { label: 'Live Product - Sikhsha.in ERP & AI', date: 'February 2026', image: '/textures/about/milestone_sikhsha.webp', url: 'https://sikhsha.in' },
-            { label: 'AI Revenue Recovery Platform', date: 'January 2026', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
-            { label: 'Presona Autonomous Trading Bot', date: 'December 2025', image: '/textures/about/milestone_presona.webp', url: 'https://github.com/echoistprashant/trading-bot' },
+            { label: 'Won 3+ College Hackathons', date: 'Rapid Prototyping & AI', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant' },
+            { label: '300+ DSA Problems Solved', date: 'LeetCode & Competitive Coding', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
+            { label: 'Co-Founder @ FEMUR Studio', date: '15+ Shipped Products', image: '/textures/about/milestone_femur.webp', url: 'https://femur.studio/' },
+            { label: 'Live Product: Sikhsha.in', date: 'School ERP & AI', image: '/textures/about/milestone_sikhsha.webp', url: 'https://sikhsha.in' },
         ],
         platformConfig: {
-            label: 'HIGHLIGHT',
+            label: 'ACHIEVEMENT',
             color: '#1a1a1a',
             icon: '⭐'
         }
@@ -433,15 +433,15 @@ const AWARDS_DATA = {
     sotd: {
         id: 'award-sotd',
         layout: 'certificate_grid',
-        title: 'AI Systems & Engineering Highlights',
+        title: 'AI Systems & Core Projects',
         items: [
-            { label: 'Text-to-SQL Engine (230 Tests)', date: 'November 2025', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine' },
-            { label: 'AI Job Application Agent (pgvector)', date: 'October 2025', image: '/textures/about/milestone_jobagent.webp', url: 'https://github.com/echoistprashant/job' },
-            { label: '370+ Test Suite (Revenue Recovery)', date: 'January 2026', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
-            { label: 'B.Tech CSE @ Central Univ. of CG', date: '2023 - 2027', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' }
+            { label: 'AI Revenue Recovery Platform', date: 'FastAPI • ML • 370+ Tests', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
+            { label: 'Autonomous AI Prediction Trading Bot', date: 'Gemini AI • Gnosis Safe', image: '/textures/about/milestone_presona.webp', url: 'https://github.com/echoistprashant/trading-bot' },
+            { label: 'Text-to-SQL Clarification Engine', date: 'Schema Engine • 230 Tests', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine' },
+            { label: 'Autonomous AI Job Application Agent', date: 'pgvector • Playwright Agent', image: '/textures/about/milestone_jobagent.webp', url: 'https://github.com/echoistprashant/job' },
         ],
         platformConfig: {
-            label: 'PORTFOLIO',
+            label: 'PROJECTS',
             color: '#1a1a1a',
             icon: '🏆'
         }
@@ -451,12 +451,12 @@ const AWARDS_DATA = {
         layout: 'certificate_grid',
         title: 'Education & Academic Journey',
         items: [
-            { label: 'Central University of Chhattisgarh', date: '2023 - 2027', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
-            { label: 'B.Tech in Computer Science & Engineering', date: 'CGPA 8.0+', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
-            { label: 'From Classroom to Production', date: 'AI Systems Study', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant' }
+            { label: 'B.Tech in Computer Science & Engineering', date: 'Oct 2023 – May 2027', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
+            { label: 'Central University of Chhattisgarh', date: 'Bilaspur, India', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
+            { label: 'Placement Cell Lead', date: 'Industry Outreach & Recruitment', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' }
         ],
         platformConfig: {
-            label: 'JOURNEY',
+            label: 'EDUCATION',
             color: '#1a1a1a',
             icon: '🎓'
         }
@@ -464,13 +464,14 @@ const AWARDS_DATA = {
     other: {
         id: 'award-other',
         layout: 'certificate_grid',
-        title: 'Production Engineering & Studio',
+        title: 'Experience & Industry Work',
         items: [
-            { label: 'Femur Studio - Digital Muscle', date: 'Bilaspur, IN', image: '/textures/about/milestone_femur.webp', url: 'https://femur.studio/' },
-            { label: 'Sikhsha.in - AI-assisted School ERP', date: 'Live System', image: '/textures/about/milestone_sikhsha.webp', url: 'https://sikhsha.in' }
+            { label: 'Co-Founder & Founding Member — FEMUR Studio', date: 'Nov 2025 – Present', image: '/textures/about/milestone_femur.webp', url: 'https://femur.studio/' },
+            { label: 'Automation Developer Intern — Expertmind Technologies', date: 'May 2025 – Jul 2025', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant' },
+            { label: 'Sikhsha.in — School ERP & AI Platform', date: 'Live Production System', image: '/textures/about/milestone_sikhsha.webp', url: 'https://sikhsha.in' }
         ],
         platformConfig: {
-            label: 'STUDIO',
+            label: 'EXPERIENCE',
             color: '#1a1a1a',
             icon: '⚡'
         }
@@ -821,28 +822,27 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
 
 /**
  * JOURNEY Milestone - Floating Islands
- * UO Island (left) and Freelance Island (right) floating in clouds
+ * University Island (left: Central Univ. of CG) and Studio Island (right: FEMUR Studio) floating in clouds
  */
 const JourneyMilestone = ({ z, scrollProgressRef }) => {
     const { camera, viewport } = useThree();
     const isTouch = isTouchDevice();
     const groupRef = useRef();
     const uoRef = useRef();
-    const freelanceRef = useRef();
+    const femurRef = useRef();
 
     // Load textures
     const uoTexture = useLoader(THREE.TextureLoader, '/textures/about/uowyspa.webp');
-    const freelanceTexture = useLoader(THREE.TextureLoader, '/textures/about/freelancewyspa.webp');
+    const femurTexture = useLoader(THREE.TextureLoader, '/textures/about/femurwyspa.webp');
 
     // Texture settings
     uoTexture.colorSpace = THREE.SRGBColorSpace;
-    freelanceTexture.colorSpace = THREE.SRGBColorSpace;
+    femurTexture.colorSpace = THREE.SRGBColorSpace;
 
     // Calculate aspect ratios to keep images 1:1 (not stretched)
-    // LEGACY FIX: Use original dimensions (2816x1536)
     const islandLegacyAspect = 2816 / 1536;
     const uoAspect = islandLegacyAspect;
-    const freelanceAspect = islandLegacyAspect;
+    const femurAspect = islandLegacyAspect;
 
     // Base height for islands - width will adjust automatically
     const islandHeight = 4.5;
@@ -850,20 +850,16 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
     useFrame((state) => {
         if (!groupRef.current) return;
 
-        // === TWARDA LINIA CLIP (RĘCZNE OBLICZENIE WORLD Z) ===
         const scrollProgress = scrollProgressRef?.current || 0;
         const worldZ = ROOM_Z + scrollProgress + z;
         groupRef.current.visible = worldZ < MILESTONE_CORRIDOR_CLIP_Z;
         if (!groupRef.current.visible) return;
 
         const time = state.clock.elapsedTime;
-
-        // FIX: Use consistent distance based on scrollProgress + offset
         const distanceZ = z + scrollProgress - 55;
 
         // Reveal effect (islands float up from below clouds)
-        // === EDYTUJ TUTAJ (JOURNEY) ===
-        const revealStart = -100; // Wcześniejszy start
+        const revealStart = -100;
         const revealEnd = -20;
         let revealFactor = 0;
 
@@ -876,9 +872,8 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
         }
 
         // Floating animation (bobbing)
-        // UO Island (Left)
+        // Central University CG Island (Left)
         if (uoRef.current) {
-            // === EDYTUJ POZYCJE TUTAJ (UO) ===
             const startY = -2;
             const endY = 1.5;
 
@@ -887,15 +882,14 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
             uoRef.current.rotation.z = Math.sin(time * 0.3) * 0.05;
         }
 
-        // Freelance Island (Right)
-        if (freelanceRef.current) {
-            // === EDYTUJ POZYCJE TUTAJ (Freelance) ===
+        // FEMUR Studio Island (Right)
+        if (femurRef.current) {
             const startY = -1;
             const endY = 2.5;
 
             const currentBaseY = startY + revealFactor * (endY - startY);
-            freelanceRef.current.position.y = currentBaseY + Math.sin(time * 0.4 + 2) * 0.25;
-            freelanceRef.current.rotation.z = Math.sin(time * 0.2 + 1) * -0.05;
+            femurRef.current.position.y = currentBaseY + Math.sin(time * 0.4 + 2) * 0.25;
+            femurRef.current.rotation.z = Math.sin(time * 0.2 + 1) * -0.05;
         }
     });
 
@@ -922,10 +916,10 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/CabinSketch-Regular.ttf"
             >
-                My path so far...
+                From Classroom to Production: AI Systems & Studio Engineering
             </Text>
 
-            {/* === UO ISLAND (Left) === */}
+            {/* === CENTRAL UNIVERSITY OF CG ISLAND (Left) === */}
             <group ref={uoRef} position={[-3.5, -1, 0]}>
                 <mesh>
                     <planeGeometry args={[islandHeight * uoAspect, islandHeight]} />
@@ -935,39 +929,57 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                         side={THREE.DoubleSide}
                     />
                 </mesh>
-                {/* NAPIS NA WYSPIE (UO) - EDYTUJ TUTAJ */}
                 <Text
-                    position={[0.1, -0.85, 0.1]} // POZYCJA (X, Y, Z)
-                    fontSize={0.4}           // WIELKOŚĆ
+                    position={[0.1, -0.65, 0.1]}
+                    fontSize={0.38}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    2025-NOW
+                    CENTRAL UNIV. CG
+                </Text>
+                <Text
+                    position={[0.1, -1.05, 0.1]}
+                    fontSize={0.32}
+                    color="#444444"
+                    anchorX="center"
+                    anchorY="middle"
+                    font="/fonts/CabinSketch-Bold.ttf"
+                >
+                    B.TECH CSE • 2023 - 2027
                 </Text>
             </group>
 
-            {/* === FREELANCE ISLAND (Right) === */}
-            <group ref={freelanceRef} position={[3.5, -2, 0.5]}>
+            {/* === FEMUR STUDIO ISLAND (Right) === */}
+            <group ref={femurRef} position={[3.5, -2, 0.5]}>
                 <mesh>
-                    <planeGeometry args={[islandHeight * freelanceAspect, islandHeight]} />
+                    <planeGeometry args={[islandHeight * femurAspect, islandHeight]} />
                     <meshBasicMaterial color="#e0e0e0"
-                        map={freelanceTexture}
+                        map={femurTexture}
                         transparent
                         side={THREE.DoubleSide}
                     />
                 </mesh>
-                {/* NAPIS NA WYSPIE (Freelance) - EDYTUJ TUTAJ */}
                 <Text
-                    position={[0, -0.65, 0.1]} // POZYCJA (X, Y, Z)
-                    fontSize={0.5}           // WIELKOŚĆ
+                    position={[0, -0.55, 0.1]}
+                    fontSize={0.42}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    2023-NOW
+                    FEMUR STUDIO
+                </Text>
+                <Text
+                    position={[0, -0.95, 0.1]}
+                    fontSize={0.32}
+                    color="#444444"
+                    anchorX="center"
+                    anchorY="middle"
+                    font="/fonts/CabinSketch-Bold.ttf"
+                >
+                    CO-FOUNDER • 2025-NOW
                 </Text>
             </group>
         </group>
@@ -980,12 +992,12 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
  */
 
 // Balloon configuration: size category, texture path, position offset
-// Headline skills: Python, TypeScript, React, Next.js, FastAPI, PostgreSQL, PyTorch, LLMs, Agentic AI, Docker
+// Headline skills from Prashant's resume: Python & AI, LLMs & RAG, LangChain, FastAPI, Next.js, React, TypeScript, PostgreSQL, AI Agents, Docker & Cloud
 const BALLOON_CONFIG = [
     // Large balloons (main skills) - front and center
-    { texture: '/textures/about/reactduzybalon.webp', paintedTexture: '/textures/about/reactduzybalon_painted.webp', label: 'Python', size: 'large', x: -2.5, y: 2, z: 0.3, phase: 0 },
-    { texture: '/textures/about/threejsduzybalon.webp', paintedTexture: '/textures/about/threejsduzybalon_painted.webp', label: 'PyTorch', size: 'large', x: 2.5, y: 2.5, z: 0.2, phase: 1.5 },
-    { texture: '/textures/about/GSAPduzybalon.webp', paintedTexture: '/textures/about/GSAPduzybalon_painted.webp', label: 'LLMs', size: 'large', x: 0, y: 3, z: 0.5, phase: 3 },
+    { texture: '/textures/about/reactduzybalon.webp', paintedTexture: '/textures/about/reactduzybalon_painted.webp', label: 'Python & AI', size: 'large', x: -2.5, y: 2, z: 0.3, phase: 0 },
+    { texture: '/textures/about/threejsduzybalon.webp', paintedTexture: '/textures/about/threejsduzybalon_painted.webp', label: 'LLMs & RAG', size: 'large', x: 2.5, y: 2.5, z: 0.2, phase: 1.5 },
+    { texture: '/textures/about/GSAPduzybalon.webp', paintedTexture: '/textures/about/GSAPduzybalon_painted.webp', label: 'LangChain', size: 'large', x: 0, y: 3, z: 0.5, phase: 3 },
 
     // Medium balloons - scattered around
     { texture: '/textures/about/JSSREDNIBALON.webp', paintedTexture: '/textures/about/JSSREDNIBALON_painted.webp', label: 'FastAPI', size: 'medium', x: -4, y: 1, z: -0.3, phase: 0.8 },
@@ -995,8 +1007,8 @@ const BALLOON_CONFIG = [
     // Small balloons - background accents
     { texture: '/textures/about/htmlmalybalon.webp', paintedTexture: '/textures/about/htmlmalybalon_painted.webp', label: 'TypeScript', size: 'small', x: -5.5, y: 2.5, z: -0.8, phase: 1.2 },
     { texture: '/textures/about/gitmalybalon.webp', paintedTexture: '/textures/about/gitmalybalon_painted.webp', label: 'PostgreSQL', size: 'small', x: 5.5, y: 3, z: -0.7, phase: 2.8 },
-    { texture: '/textures/about/figmamalybalon.webp', paintedTexture: '/textures/about/figmamalybalon_painted.webp', label: 'Agentic AI', size: 'small', x: -3, y: 4.5, z: -0.5, phase: 3.5 },
-    { texture: '/textures/about/firebasemalybalon.webp', paintedTexture: '/textures/about/firebasemalybalon_painted.webp', label: 'Docker', size: 'small', x: 3.5, y: 4, z: -0.6, phase: 4.5 },
+    { texture: '/textures/about/figmamalybalon.webp', paintedTexture: '/textures/about/figmamalybalon_painted.webp', label: 'AI Agents', size: 'small', x: -3, y: 4.5, z: -0.5, phase: 3.5 },
+    { texture: '/textures/about/firebasemalybalon.webp', paintedTexture: '/textures/about/firebasemalybalon_painted.webp', label: 'Docker & Cloud', size: 'small', x: 3.5, y: 4, z: -0.6, phase: 4.5 },
 ];
 
 // Size multipliers for balloon categories
@@ -1325,6 +1337,22 @@ const SkillBalloon = ({ config, revealFactorRef, spreadFactorRef, timeRef }) => 
                     </Text>
                 )}
 
+                {/* Permanent visible badge label below balloon */}
+                {!isPopping && (
+                    <Text
+                        position={[0, -baseHeight * 0.45, 0.05]}
+                        fontSize={Math.max(0.24, baseHeight * 0.14)}
+                        color="#1a1a1a"
+                        anchorX="center"
+                        anchorY="middle"
+                        font="/fonts/CabinSketch-Bold.ttf"
+                        outlineWidth={0.02}
+                        outlineColor="#ffffff"
+                    >
+                        {config.label}
+                    </Text>
+                )}
+
                 <PositionalAudio
                     ref={balloonAudioRef}
                     url="/sounds/baloonpoop.mp3"
@@ -1406,7 +1434,7 @@ const SkillsMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                SKILLS
+                SKILLS & TECH STACK
             </Text>
 
             {/* Subtitle */}
@@ -1418,7 +1446,7 @@ const SkillsMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/CabinSketch-Regular.ttf"
             >
-                Technologies I love working with
+                Python • LLMs & RAG • LangChain • FastAPI • Next.js • PostgreSQL • Docker
             </Text>
 
             {/* === FLOATING BALLOONS === */}

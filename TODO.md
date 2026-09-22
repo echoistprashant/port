@@ -1,4 +1,4 @@
-# 🎨 Portfolio ITOM — Master To-Do List
+# 🎨 Prashant Yadav Portfolio — Master Project Guide
 
 > **Cel:** Dopieścić portfolio do poziomu **AWWWARDS SOTD / FWA** — zero kompromisów.  
 > **Data startu:** 2026-02-13  

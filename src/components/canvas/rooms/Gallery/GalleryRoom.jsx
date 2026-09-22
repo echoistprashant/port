@@ -36,22 +36,22 @@ export const GALLERY_INTERACTION_AUDIO_SETTINGS = {
 // Define the unique projects and their textures
 const FALLBACK_PROJECTS = [
     {
-        id: 'ai-revenue-recovery',
-        title: 'REVENUE RECOVERY',
-        front: '/textures/gallery/revenue_front.webp',
-        painted: '/textures/gallery/revenue_painted.webp',
-        url: 'https://github.com/echoistprashant/ai-revenue-recovery',
-        description: 'An intelligent payment intelligence platform that classifies failed recurring charges and predicts recovery likelihood using scikit-learn. Powered by a deterministic safety engine, Razorpay webhooks, and an AI Revenue Analyst with 370+ automated tests.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']
-    },
-    {
         id: 'sikhsha-ai',
         title: 'SIKHSHA AI',
         front: '/textures/gallery/sikhsha_front.webp',
         painted: '/textures/gallery/sikhsha_painted.webp',
         url: 'https://sikhsha.in',
-        description: 'A comprehensive school ERP and AI learning platform uniting attendance, fee registers, teaching decks, and lesson plans. Students resolve text doubts with GPT-4 in real-time, while administrators monitor usage and AI cost analytics.',
+        description: 'Live school management ERP covering 6+ core workflows (admissions, attendance, fee collection, dues tracking, parent communication, role-based dashboards). Automated teacher prep with 5 AI classroom tools (question generator, quiz engine, deck builder, lesson planner, student doubt solver) and Razorpay integration.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/netlifylogo.webp']
+    },
+    {
+        id: 'ai-revenue-recovery',
+        title: 'REVENUE RECOVERY',
+        front: '/textures/gallery/revenue_front.webp',
+        painted: '/textures/gallery/revenue_painted.webp',
+        url: 'https://github.com/echoistprashant/ai-revenue-recovery',
+        description: 'End-to-end payment recovery engine ingesting failure webhooks, classifying root causes with ML, and executing deterministic recovery policies, reducing involuntary churn by 22%. Features multi-channel remediation via Baileys WhatsApp WebSocket and Retell AI voice agents with 370+ tests.',
+        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']
     },
     {
         id: 'trading-bot',
@@ -59,16 +59,16 @@ const FALLBACK_PROJECTS = [
         front: '/textures/gallery/presona_front.webp',
         painted: '/textures/gallery/presona_painted.webp',
         url: 'https://github.com/echoistprashant/trading-bot',
-        description: 'Autonomous prediction-market trading bot for Presagio. Employs double-verification using Google Gemini AI reasoning and Tavily search API verification before routing trades through a Safe Ethereum smart-contract wallet.',
+        description: 'Autonomous decentralized trading agent on Gnosis Chain executing binary prediction trades on Presagio through Gnosis Safe smart wallets. Features a 2-stage verification pipeline using Google Gemini LLM & Tavily Web Search API, mitigating AI hallucination by 85% with GraphQL & SQLite persistence.',
         techStack: ['/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp', '/textures/gallery/firebaselogo.webp']
     },
     {
         id: 'text-to-sql-clarification-engine',
-        title: 'TEXT-TO-SQL AI',
+        title: 'TEXT-TO-SQL ENGINE',
         front: '/textures/gallery/textsql_front.webp',
         painted: '/textures/gallery/textsql_painted.webp',
         url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine',
-        description: 'An interactive clarification engine for natural language SQL queries. Detects ambiguous questions and asks targeted follow-ups before generating parameterized, read-only SELECT queries with schema awareness and 230 passing tests.',
+        description: 'Schema-aware query engine that asks targeted follow-ups on underspecified questions instead of guessing. Inspects real PostgreSQL schemas, resolves multi-table foreign key join paths, and compiles parameterized read-only SELECT queries backed by 230 passing tests.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/tailwindlogo.webp']
     },
     {
@@ -77,7 +77,7 @@ const FALLBACK_PROJECTS = [
         front: '/textures/gallery/jobagent_front.webp',
         painted: '/textures/gallery/jobagent_painted.webp',
         url: 'https://github.com/echoistprashant/job',
-        description: 'An autonomous job hunting assistant that parses resumes into structured LLM profiles, matches openings across Greenhouse and Lever using pgvector, and uses Playwright to prepare grounded, reviewed applications.',
+        description: 'Autonomous job hunting agent parsing PDF/DOCX resumes into structured LLM candidate profiles, collecting openings from Greenhouse & Lever, and ranking matches with a hybrid AI matcher backed by PostgreSQL and pgvector with Playwright automation.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']
     },
 ];

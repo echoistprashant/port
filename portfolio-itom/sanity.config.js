@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'portfolio-itom',
+  title: 'prashant-yadav-portfolio',
 
-  projectId: 'kv5wjjmj',
+  projectId: 'YOUR_PROJECT_ID',
   dataset: 'production',
 
   plugins: [
