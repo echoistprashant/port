@@ -42,7 +42,7 @@ const FALLBACK_PROJECTS = [
         painted: '/textures/gallery/sikhsha_painted.webp',
         url: 'https://sikhsha.in',
         description: 'Live school management ERP covering 6+ core workflows (admissions, attendance, fee collection, dues tracking, parent communication, role-based dashboards). Automated teacher prep with 5 AI classroom tools (question generator, quiz engine, deck builder, lesson planner, student doubt solver) and Razorpay integration.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/netlifylogo.webp']
+        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/openailogo.webp', '/textures/gallery/jslogo.webp']
     },
     {
         id: 'ai-revenue-recovery',
@@ -51,7 +51,7 @@ const FALLBACK_PROJECTS = [
         painted: '/textures/gallery/revenue_painted.webp',
         url: 'https://github.com/echoistprashant/ai-revenue-recovery',
         description: 'End-to-end payment recovery engine ingesting failure webhooks, classifying root causes with ML, and executing deterministic recovery policies, reducing involuntary churn by 22%. Features multi-channel remediation via Baileys WhatsApp WebSocket and Retell AI voice agents with 370+ tests.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']
+        techStack: ['/textures/gallery/fastapilogo.webp', '/textures/gallery/pythonlogo.webp', '/textures/gallery/dockerlogo.webp', '/textures/gallery/gitlogo.webp']
     },
     {
         id: 'trading-bot',
@@ -60,7 +60,7 @@ const FALLBACK_PROJECTS = [
         painted: '/textures/gallery/presona_painted.webp',
         url: 'https://github.com/echoistprashant/trading-bot',
         description: 'Autonomous decentralized trading agent on Gnosis Chain executing binary prediction trades on Presagio through Gnosis Safe smart wallets. Features a 2-stage verification pipeline using Google Gemini LLM & Tavily Web Search API, mitigating AI hallucination by 85% with GraphQL & SQLite persistence.',
-        techStack: ['/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp', '/textures/gallery/firebaselogo.webp']
+        techStack: ['/textures/gallery/geminilogo.webp', '/textures/gallery/pythonlogo.webp', '/textures/gallery/gitlogo.webp', '/textures/gallery/dockerlogo.webp']
     },
     {
         id: 'text-to-sql-clarification-engine',
@@ -69,7 +69,7 @@ const FALLBACK_PROJECTS = [
         painted: '/textures/gallery/textsql_painted.webp',
         url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine',
         description: 'Schema-aware query engine that asks targeted follow-ups on underspecified questions instead of guessing. Inspects real PostgreSQL schemas, resolves multi-table foreign key join paths, and compiles parameterized read-only SELECT queries backed by 230 passing tests.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/tailwindlogo.webp']
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/postgresqllogo.webp', '/textures/gallery/langchainlogo.webp', '/textures/gallery/fastapilogo.webp']
     },
     {
         id: 'ai-job-application-agent',
@@ -78,7 +78,7 @@ const FALLBACK_PROJECTS = [
         painted: '/textures/gallery/jobagent_painted.webp',
         url: 'https://github.com/echoistprashant/job',
         description: 'Autonomous job hunting agent parsing PDF/DOCX resumes into structured LLM candidate profiles, collecting openings from Greenhouse & Lever, and ranking matches with a hybrid AI matcher backed by PostgreSQL and pgvector with Playwright automation.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/fastapilogo.webp', '/textures/gallery/postgresqllogo.webp', '/textures/gallery/langchainlogo.webp']
     },
 ];
 

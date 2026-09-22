@@ -160,6 +160,14 @@ export const GALLERY_TEXTURES_VERSIONED = [
     'reactlogo',
     'tailwindlogo',
     'wordpresslogo',
+    'pythonlogo',
+    'fastapilogo',
+    'langchainlogo',
+    'postgresqllogo',
+    'dockerlogo',
+    'geminilogo',
+    'openailogo',
+    'gitlogo',
 ];
 
 export const GALLERY_TEXTURES = [
@@ -229,6 +237,21 @@ export const ABOUT_TEXTURES = [
     '/textures/about/figmamalybalon_painted.webp',
     '/textures/about/firebasemalybalon.webp',
     '/textures/about/firebasemalybalon_painted.webp',
+    // Custom AI & Engineering balloons
+    '/textures/about/python_balon.webp',
+    '/textures/about/python_balon_painted.webp',
+    '/textures/about/gemini_balon.webp',
+    '/textures/about/gemini_balon_painted.webp',
+    '/textures/about/langchain_balon.webp',
+    '/textures/about/langchain_balon_painted.webp',
+    '/textures/about/fastapi_balon.webp',
+    '/textures/about/fastapi_balon_painted.webp',
+    '/textures/about/postgresql_balon.webp',
+    '/textures/about/postgresql_balon_painted.webp',
+    '/textures/about/openai_balon.webp',
+    '/textures/about/openai_balon_painted.webp',
+    '/textures/about/docker_balon.webp',
+    '/textures/about/docker_balon_painted.webp',
     // Clouds
     '/textures/clouds/1131c3eb-dfae-423f-924b-ff39d8ccd6dc.webp',
     '/textures/clouds/254b8ec8-d6f7-4275-956f-7bab65b2ce2d.webp',

@@ -810,7 +810,7 @@ const EntranceDoors = ({
                 position={[3.5, 0, 0.04]}
                 rotation={[0, 0, 0]}
             >
-                <planeGeometry args={[1.5, 1.5]} />
+                <planeGeometry args={[1.32, 1.32]} />
                 <meshBasicMaterial color="#e0e0e0"
                     map={avatarWindowTexture}
                     transparent={true}
