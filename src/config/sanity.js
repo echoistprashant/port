@@ -1,6 +1,3 @@
-import { createClient } from '@sanity/client';
-import { createImageUrlBuilder } from '@sanity/image-url';
-
 // Local Master Data Mode: External Sanity CMS disabled
 export const isSanityConfigured = false;
 export const sanityClient = null;
