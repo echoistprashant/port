@@ -46,7 +46,7 @@ const FALLBACK_PROJECTS = [
     },
     {
         id: 'ai-revenue-recovery',
-        title: 'REVENUE RECOVERY',
+        title: 'RR ACT',
         front: '/textures/gallery/revenue_front.webp',
         painted: '/textures/gallery/revenue_painted.webp',
         url: 'https://github.com/echoistprashant/ai-revenue-recovery',
@@ -55,7 +55,7 @@ const FALLBACK_PROJECTS = [
     },
     {
         id: 'trading-bot',
-        title: 'PRESONA TRADER',
+        title: 'PERSONA',
         front: '/textures/gallery/presona_front.webp',
         painted: '/textures/gallery/presona_painted.webp',
         url: 'https://github.com/echoistprashant/trading-bot',
@@ -64,7 +64,7 @@ const FALLBACK_PROJECTS = [
     },
     {
         id: 'text-to-sql-clarification-engine',
-        title: 'TEXT-TO-SQL ENGINE',
+        title: 'TEXT TO SQL',
         front: '/textures/gallery/textsql_front.webp',
         painted: '/textures/gallery/textsql_painted.webp',
         url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine',

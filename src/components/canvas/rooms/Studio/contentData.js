@@ -206,7 +206,7 @@ const RAW_CONTENT_DATA = [
         id: 'monitor-006',
         platform: 'blog',
         title: 'Autonomous Trading Bot Engineering',
-        description: 'Presona Trader: Double-verification algorithms integrating Gemini AI with web search and Safe smart-contract execution.',
+        description: 'Persona: Double-verification algorithms integrating Gemini AI with web search and Safe smart-contract execution.',
         thumbnail: null,
         url: 'https://github.com/echoistprashant/trading-bot',
         date: '2025-11-20',
@@ -215,7 +215,7 @@ const RAW_CONTENT_DATA = [
     {
         id: 'monitor-007',
         platform: 'blog',
-        title: 'Text-to-SQL Clarification Engine',
+        title: 'Text to SQL Engine',
         description: 'Eliminating hallucinations in database query generation with schema-aware follow-up clarification dialogues.',
         thumbnail: null,
         url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine',

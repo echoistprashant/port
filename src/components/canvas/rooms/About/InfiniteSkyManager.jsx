@@ -435,9 +435,9 @@ const AWARDS_DATA = {
         layout: 'certificate_grid',
         title: 'AI Systems & Core Projects',
         items: [
-            { label: 'AI Revenue Recovery Platform', date: 'FastAPI • ML • 370+ Tests', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
-            { label: 'Autonomous AI Prediction Trading Bot', date: 'Gemini AI • Gnosis Safe', image: '/textures/about/milestone_presona.webp', url: 'https://github.com/echoistprashant/trading-bot' },
-            { label: 'Text-to-SQL Clarification Engine', date: 'Schema Engine • 230 Tests', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine' },
+            { label: 'RR Act', date: 'FastAPI • ML • 370+ Tests', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
+            { label: 'Persona', date: 'Gemini AI • Gnosis Safe', image: '/textures/about/milestone_presona.webp', url: 'https://github.com/echoistprashant/trading-bot' },
+            { label: 'Text to SQL', date: 'Schema Engine • 230 Tests', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine' },
             { label: 'Autonomous AI Job Application Agent', date: 'pgvector • Playwright Agent', image: '/textures/about/milestone_jobagent.webp', url: 'https://github.com/echoistprashant/job' },
         ],
         platformConfig: {

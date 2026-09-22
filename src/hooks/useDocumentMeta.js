@@ -23,7 +23,7 @@ const ROOM_META = {
     gallery: {
         path: '/gallery',
         title: 'Projects Gallery — Prashant Yadav',
-        description: 'Browse AI & web development projects by Prashant Yadav: AI Revenue Recovery, Sikhsha AI, Persona Trader, Text-to-SQL Engine, and AI Job Application Agent.',
+        description: 'Browse AI & web development projects by Prashant Yadav: RR Act, Sikhsha AI, Persona, Text to SQL, and AI Job Application Agent.',
     },
     studio: {
         path: '/studio',
