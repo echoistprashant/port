@@ -38,8 +38,8 @@ const FALLBACK_PROJECTS = [
     {
         id: 'ai-revenue-recovery',
         title: 'REVENUE RECOVERY',
-        front: '/textures/gallery/monetuneprzod.webp',
-        painted: '/textures/gallery/monetuneprzod_painted.webp',
+        front: '/textures/gallery/revenue_front.webp',
+        painted: '/textures/gallery/revenue_painted.webp',
         url: 'https://github.com/echoistprashant/ai-revenue-recovery',
         description: 'An intelligent payment intelligence platform that classifies failed recurring charges and predicts recovery likelihood using scikit-learn. Powered by a deterministic safety engine, Razorpay webhooks, and an AI Revenue Analyst with 370+ automated tests.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']
@@ -47,8 +47,8 @@ const FALLBACK_PROJECTS = [
     {
         id: 'sikhsha-ai',
         title: 'SIKHSHA AI',
-        front: '/textures/gallery/timberkittyprzod.webp',
-        painted: '/textures/gallery/timberkittyprzod_painted.webp',
+        front: '/textures/gallery/sikhsha_front.webp',
+        painted: '/textures/gallery/sikhsha_painted.webp',
         url: 'https://sikhsha.in',
         description: 'A comprehensive school ERP and AI learning platform uniting attendance, fee registers, teaching decks, and lesson plans. Students resolve text doubts with GPT-4 in real-time, while administrators monitor usage and AI cost analytics.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/netlifylogo.webp']
@@ -56,8 +56,8 @@ const FALLBACK_PROJECTS = [
     {
         id: 'trading-bot',
         title: 'PRESONA TRADER',
-        front: '/textures/gallery/youngmultiprzod.webp',
-        painted: '/textures/gallery/youngmultiprzod_painted.webp',
+        front: '/textures/gallery/presona_front.webp',
+        painted: '/textures/gallery/presona_painted.webp',
         url: 'https://github.com/echoistprashant/trading-bot',
         description: 'Autonomous prediction-market trading bot for Presagio. Employs double-verification using Google Gemini AI reasoning and Tavily search API verification before routing trades through a Safe Ethereum smart-contract wallet.',
         techStack: ['/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp', '/textures/gallery/firebaselogo.webp']
@@ -65,8 +65,8 @@ const FALLBACK_PROJECTS = [
     {
         id: 'text-to-sql-clarification-engine',
         title: 'TEXT-TO-SQL AI',
-        front: '/textures/gallery/bioprzod.webp',
-        painted: '/textures/gallery/bioprzod_painted.webp',
+        front: '/textures/gallery/textsql_front.webp',
+        painted: '/textures/gallery/textsql_painted.webp',
         url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine',
         description: 'An interactive clarification engine for natural language SQL queries. Detects ambiguous questions and asks targeted follow-ups before generating parameterized, read-only SELECT queries with schema awareness and 230 passing tests.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/tailwindlogo.webp']
@@ -74,8 +74,8 @@ const FALLBACK_PROJECTS = [
     {
         id: 'ai-job-application-agent',
         title: 'AI JOB AGENT',
-        front: '/textures/gallery/monetuneprzod.webp',
-        painted: '/textures/gallery/monetuneprzod_painted.webp',
+        front: '/textures/gallery/jobagent_front.webp',
+        painted: '/textures/gallery/jobagent_painted.webp',
         url: 'https://github.com/echoistprashant/job',
         description: 'An autonomous job hunting assistant that parses resumes into structured LLM profiles, matches openings across Greenhouse and Lever using pgvector, and uses Playwright to prepare grounded, reviewed applications.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/firebaselogo.webp']

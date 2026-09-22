@@ -133,14 +133,19 @@ export const GALLERY_TEXTURES_BASE = [
     '/textures/gallery/bird_gray.webp',
     '/textures/gallery/klamerka.webp',
     '/textures/gallery/openliveproject.webp',
+    '/textures/gallery/revenue_front.webp',
+    '/textures/gallery/revenue_painted.webp',
+    '/textures/gallery/sikhsha_front.webp',
+    '/textures/gallery/sikhsha_painted.webp',
+    '/textures/gallery/presona_front.webp',
+    '/textures/gallery/presona_painted.webp',
+    '/textures/gallery/textsql_front.webp',
+    '/textures/gallery/textsql_painted.webp',
+    '/textures/gallery/jobagent_front.webp',
+    '/textures/gallery/jobagent_painted.webp',
 ];
 
 export const GALLERY_TEXTURES_VERSIONED = [
-    // Project cards
-    'monetuneprzod',
-    'timberkittyprzod',
-    'youngmultiprzod',
-    'bioprzod',
     // Card back
     'tylkartki',
     'przyciskdotylukartki',
@@ -190,11 +195,14 @@ export const ABOUT_TEXTURES = [
     '/textures/about/SOTM_painted.webp',
     '/textures/about/button.webp',
     '/textures/about/button_painted.webp',
-    // Award images (for overlay)
-    '/textures/about/SOTDAYYOUNGMULTICSSWINNER.webp',
-    '/textures/about/SOTDAYYOUNGMULTIGSAP.webp',
-    '/textures/about/SOTDAYYOUNGMULTIORPETRON.webp',
-    '/textures/about/SOTDAYYOUNGMULTIDESIGNNOMINESS.webp',
+    // Milestone images (for overlay)
+    '/textures/about/milestone_textsql.webp',
+    '/textures/about/milestone_jobagent.webp',
+    '/textures/about/milestone_revenue.webp',
+    '/textures/about/milestone_presona.webp',
+    '/textures/about/milestone_sikhsha.webp',
+    '/textures/about/milestone_college.webp',
+    '/textures/about/milestone_femur.webp',
     // Journey islands
     '/textures/about/uowyspa.webp',
     '/textures/about/freelancewyspa.webp',

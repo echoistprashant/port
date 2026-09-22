@@ -419,10 +419,10 @@ const AWARDS_DATA = {
         layout: 'certificate_grid',
         title: 'Featured Milestones & Projects',
         items: [
-            { label: 'Founding Member - Femur Studio', date: 'March 2026', image: '/textures/about/FEATURED.webp', url: 'https://femur.studio/' },
-            { label: 'Live Product - Sikhsha.in ERP & AI', date: 'February 2026', image: '/textures/about/FEATURED.webp', url: 'https://sikhsha.in' },
-            { label: 'AI Revenue Recovery Platform', date: 'January 2026', image: '/textures/about/FEATURED.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
-            { label: 'Presona Autonomous Trading Bot', date: 'December 2025', image: '/textures/about/FEATURED.webp', url: 'https://github.com/echoistprashant/trading-bot' },
+            { label: 'Founding Member - Femur Studio', date: 'March 2026', image: '/textures/about/milestone_femur.webp', url: 'https://femur.studio/' },
+            { label: 'Live Product - Sikhsha.in ERP & AI', date: 'February 2026', image: '/textures/about/milestone_sikhsha.webp', url: 'https://sikhsha.in' },
+            { label: 'AI Revenue Recovery Platform', date: 'January 2026', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
+            { label: 'Presona Autonomous Trading Bot', date: 'December 2025', image: '/textures/about/milestone_presona.webp', url: 'https://github.com/echoistprashant/trading-bot' },
         ],
         platformConfig: {
             label: 'HIGHLIGHT',
@@ -435,10 +435,10 @@ const AWARDS_DATA = {
         layout: 'certificate_grid',
         title: 'AI Systems & Engineering Highlights',
         items: [
-            { label: 'Text-to-SQL Engine (230 Tests)', date: 'November 2025', image: '/textures/about/SOTDAYYOUNGMULTIGSAP.webp', url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine' },
-            { label: 'AI Job Application Agent (pgvector)', date: 'October 2025', image: '/textures/about/SOTDAYYOUNGMULTICSSWINNER.webp', url: 'https://github.com/echoistprashant/job' },
-            { label: '370+ Test Suite (Revenue Recovery)', date: 'January 2026', image: '/textures/about/SOTDAYYOUNGMULTIORPETRON.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
-            { label: 'B.Tech CSE @ Central Univ. of CG', date: '2023 - 2027', image: '/textures/about/SOTDAYYOUNGMULTIDESIGNNOMINESS.webp', url: 'https://github.com/echoistprashant' }
+            { label: 'Text-to-SQL Engine (230 Tests)', date: 'November 2025', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine' },
+            { label: 'AI Job Application Agent (pgvector)', date: 'October 2025', image: '/textures/about/milestone_jobagent.webp', url: 'https://github.com/echoistprashant/job' },
+            { label: '370+ Test Suite (Revenue Recovery)', date: 'January 2026', image: '/textures/about/milestone_revenue.webp', url: 'https://github.com/echoistprashant/ai-revenue-recovery' },
+            { label: 'B.Tech CSE @ Central Univ. of CG', date: '2023 - 2027', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' }
         ],
         platformConfig: {
             label: 'PORTFOLIO',
@@ -449,23 +449,30 @@ const AWARDS_DATA = {
     sotm: {
         id: 'award-sotm',
         layout: 'certificate_grid',
-        title: 'Site of the Month Awards',
-        items: [],
+        title: 'Education & Academic Journey',
+        items: [
+            { label: 'Central University of Chhattisgarh', date: '2023 - 2027', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
+            { label: 'B.Tech in Computer Science & Engineering', date: 'CGPA 8.0+', image: '/textures/about/milestone_college.webp', url: 'https://github.com/echoistprashant' },
+            { label: 'From Classroom to Production', date: 'AI Systems Study', image: '/textures/about/milestone_textsql.webp', url: 'https://github.com/echoistprashant' }
+        ],
         platformConfig: {
-            label: 'AWARD',
+            label: 'JOURNEY',
             color: '#1a1a1a',
-            icon: '📅'
+            icon: '🎓'
         }
     },
     other: {
         id: 'award-other',
         layout: 'certificate_grid',
-        title: 'Other Awards',
-        items: [],
+        title: 'Production Engineering & Studio',
+        items: [
+            { label: 'Femur Studio - Digital Muscle', date: 'Bilaspur, IN', image: '/textures/about/milestone_femur.webp', url: 'https://femur.studio/' },
+            { label: 'Sikhsha.in - AI-assisted School ERP', date: 'Live System', image: '/textures/about/milestone_sikhsha.webp', url: 'https://sikhsha.in' }
+        ],
         platformConfig: {
-            label: 'PRESTIGE',
+            label: 'STUDIO',
             color: '#1a1a1a',
-            icon: '👑'
+            icon: '⚡'
         }
     }
 };
@@ -624,7 +631,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                AWARDS
+                HIGHLIGHTS
             </Text>
 
             {/* === SOTD (behind SOTY, rendered second) === */}
@@ -673,7 +680,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    SOTD
+                    PROJECTS
                 </Text>
                 {/* AWARD COUNT */}
                 <Text
@@ -734,7 +741,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    SOTM
+                    JOURNEY
                 </Text>
                 {/* AWARD COUNT */}
                 <Text
@@ -794,7 +801,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    OTHER
+                    STUDIO
                 </Text>
                 {/* AWARD COUNT */}
                 <Text
