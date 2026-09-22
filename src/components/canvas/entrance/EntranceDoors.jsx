@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Text, useTexture, Html } from '@react-three/drei';
+import { Text, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import '../shaders/RevealMaterial'; // Registers alpha-discard reveal shader
@@ -82,6 +82,8 @@ const EntranceDoors = ({
     const bugTexture = useTexture('/textures/entrance/bug_sketch.webp');
     const inkSplashTexture = useTexture('/images/ink-splash.webp');
     const speechBubbleTexture = useTexture('/textures/entrance/speech_bubble.webp');
+    const resumeSignTexture = useTexture('/textures/corridor/pustatabliczka.webp');
+    const resumeBtnRef = useRef();
 
     // Cat Ref
     const leftPupilRef = useRef();
@@ -305,6 +307,55 @@ const EntranceDoors = ({
             duration: 1.8,
             ease: 'power2.inOut'
         }, 0.3);
+    };
+
+    // Auto-enter: Automatically opens the doors and glides into the corridor ("first page") after preloader completes
+    useEffect(() => {
+        const autoEnterTimer = setTimeout(() => {
+            if (!isOpen && !isAnimating) {
+                handleClick();
+            }
+        }, 800);
+
+        return () => clearTimeout(autoEnterTimer);
+    }, []);
+
+    // Resume button handlers (3D plaque above window)
+    const handleResumeDownload = (e) => {
+        e?.stopPropagation?.();
+        const link = document.createElement('a');
+        link.href = '/resume.pdf';
+        link.download = 'Prashant_Yadav_Resume.pdf';
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const handleResumeEnter = (e) => {
+        e?.stopPropagation?.();
+        document.body.style.cursor = 'pointer';
+        if (resumeBtnRef.current) {
+            gsap.to(resumeBtnRef.current.scale, {
+                x: 1.08,
+                y: 1.08,
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        }
+    };
+
+    const handleResumeLeave = (e) => {
+        e?.stopPropagation?.();
+        document.body.style.cursor = 'auto';
+        if (resumeBtnRef.current) {
+            gsap.to(resumeBtnRef.current.scale, {
+                x: 1.0,
+                y: 1.0,
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        }
     };
 
     // Handle hover - doors slightly open to indicate interactivity
@@ -835,32 +886,34 @@ const EntranceDoors = ({
 
             {/* RESUME BUTTON (Just Above Window) */}
             {!isOpen && !isAnimating && (
-                <group position={[2.5, 0.98, 0.35]}>
-                    <Html
-                        center
-                        zIndexRange={[100, 0]}
-                        style={{
-                            pointerEvents: 'auto',
-                            userSelect: 'none'
-                        }}
+                <group
+                    ref={resumeBtnRef}
+                    position={[2.5, 0.98, 0.28]}
+                    onClick={handleResumeDownload}
+                    onPointerEnter={handleResumeEnter}
+                    onPointerLeave={handleResumeLeave}
+                >
+                    <mesh>
+                        <planeGeometry args={[0.78, 0.26]} />
+                        <meshBasicMaterial
+                            color="#ffffff"
+                            map={resumeSignTexture}
+                            transparent={true}
+                            alphaTest={0.1}
+                            roughness={0.9}
+                        />
+                    </mesh>
+                    <Text
+                        font="/fonts/CabinSketch-Bold.ttf"
+                        fontSize={0.095}
+                        color="#151515"
+                        anchorX="center"
+                        anchorY="middle"
+                        position={[0, 0.005, 0.01]}
+                        letterSpacing={0.02}
                     >
-                        <a
-                            href="/resume.pdf"
-                            download="Prashant_Yadav_Resume.pdf"
-                            className="window-resume-btn"
-                            title="Download Prashant Yadav's Resume (PDF)"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <svg viewBox="0 0 24 24" className="icon-resume">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="12" y1="18" x2="12" y2="12" />
-                                <polyline points="9 15 12 18 15 15" />
-                            </svg>
-                            <span className="resume-label">RESUME</span>
-                        </a>
-                    </Html>
+                        📄 RESUME
+                    </Text>
                 </group>
             )}
 

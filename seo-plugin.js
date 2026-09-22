@@ -1,12 +1,3 @@
-import { createClient } from '@sanity/client';
-
-const sanityClient = createClient({
-    projectId: 'kv5wjjmj',
-    dataset: 'production',
-    useCdn: true,
-    apiVersion: '2024-03-01',
-});
-
 // Tech stack filename -> human-readable name mapping for JSON-LD
 const TECH_STACK_NAMES = {
     'reactlogo.webp': 'React',
@@ -15,479 +6,306 @@ const TECH_STACK_NAMES = {
     'jslogo.webp': 'JavaScript',
     'tailwindlogo.webp': 'Tailwind CSS',
     'firebaselogo.webp': 'Firebase',
-    'netlifylogo.webp': 'Netlify',
-    'wordpresslogo.webp': 'WordPress',
-    'elementorlogo.webp': 'Elementor',
-    'phplogo.webp': 'PHP',
+    'pythonlogo.webp': 'Python',
+    'fastapilogo.webp': 'FastAPI',
+    'dockerlogo.webp': 'Docker',
+    'gitlogo.webp': 'Git',
+    'postgresqllogo.webp': 'PostgreSQL',
+    'langchainlogo.webp': 'LangChain',
+    'openailogo.webp': 'OpenAI',
+    'geminilogo.webp': 'Google Gemini',
 };
 
-/**
- * Helper to ensure dates are in ISO-8601 format with timezone for SEO.
- */
-function formatIsoDate(dateString) {
-    if (!dateString) return undefined;
-    if (dateString.includes('T')) return dateString; // Already has time/timezone
-    return `${dateString}T12:00:00Z`; // Default to noon UTC
-}
+// Prashant Yadav Master Data
+const PRASHANT_GLOBAL = {
+    siteTitle: 'Portfolio - Prashant | AI Engineer & Full-Stack Developer',
+    siteDescription: 'Interactive 3D developer portfolio by Prashant Yadav. Explore AI engineering projects, LLMs, full-stack applications, and agentic workflows in a hand-drawn 3D space.',
+    aboutMe: 'Prashant Yadav is an AI Engineer and developer who builds intelligent, production-ready applications using machine learning and large language models. Founding Member at Femur Studio.',
+    githubUrl: 'https://github.com/echoistprashant',
+    linkedinUrl: 'https://www.linkedin.com/in/echoistprashant/',
+    xUrl: 'https://x.com/ConstPrashant',
+    canonicalUrl: 'https://prashantyadav.dev/'
+};
 
-/**
- * Build dynamic JSON-LD structured data from Sanity content.
- * This generates schema.org entities that AI search engines (Google AI Overviews,
- * Perplexity, Gemini) use to understand and cite content in their answers.
- */
-function buildJsonLd(globalInfo, projects, studio, awards, faqList) {
-    const graph = [];
+const PRASHANT_PROJECTS = [
+    {
+        title: 'RR Act (Revenue Recovery Engine)',
+        seoTitle: 'RR Act – Payment Recovery AI Engine',
+        description: 'End-to-end payment recovery engine ingesting failure webhooks, classifying root causes with ML, and executing deterministic recovery policies, reducing involuntary churn by 22%. Features multi-channel remediation via WhatsApp WebSocket and Retell AI voice agents with 370+ tests.',
+        seoDescription: 'Autonomous revenue recovery engine using ML classification, Retell AI voice agents, and deterministic workflows to reduce involuntary subscription churn.',
+        url: 'https://github.com/echoistprashant/ai-revenue-recovery',
+        dateCreated: '2025-11-01',
+        techStack: ['fastapilogo.webp', 'pythonlogo.webp', 'dockerlogo.webp', 'gitlogo.webp']
+    },
+    {
+        title: 'Sikhsha AI',
+        seoTitle: 'Sikhsha AI – Intelligent Educational Platform',
+        description: 'AI-powered education platform transforming curricula into adaptive quizzes, interactive flashcards, and personalized study paths. Built with Next.js, LangChain, and vector search.',
+        seoDescription: 'Adaptive AI learning platform delivering curriculum-aligned flashcards, RAG-powered study assistants, and real-time assessments.',
+        url: 'https://github.com/echoistprashant',
+        dateCreated: '2025-10-15',
+        techStack: ['reactlogo.webp', 'tailwindlogo.webp', 'openailogo.webp', 'jslogo.webp']
+    },
+    {
+        title: 'Persona (Trading Bot)',
+        seoTitle: 'Persona – Autonomous Prediction Market Agent',
+        description: 'Autonomous decentralized trading agent on Gnosis Chain executing binary prediction trades on Presagio through Gnosis Safe smart wallets. Features a 2-stage verification pipeline using Google Gemini LLM & Tavily Web Search API, mitigating AI hallucination by 85%.',
+        seoDescription: 'Autonomous trading bot on Gnosis Chain using Gemini LLM and Tavily Web Search verification for hallucination-resistant market predictions.',
+        url: 'https://github.com/echoistprashant/trading-bot',
+        dateCreated: '2025-12-01',
+        techStack: ['pythonlogo.webp', 'gitlogo.webp', 'dockerlogo.webp', 'geminilogo.webp']
+    },
+    {
+        title: 'Text to SQL Engine',
+        seoTitle: 'Text to SQL – Clarification & Query Engine',
+        description: 'Schema-aware query engine that asks targeted follow-ups on underspecified questions instead of guessing. Inspects real PostgreSQL schemas, resolves multi-table foreign key join paths, and compiles parameterized read-only SELECT queries backed by 230 passing tests.',
+        seoDescription: 'Production-ready text-to-SQL compiler with proactive schema ambiguity resolution, preventing erroneous database queries.',
+        url: 'https://github.com/echoistprashant/text-to-sql-clarification-engine',
+        dateCreated: '2026-01-10',
+        techStack: ['pythonlogo.webp', 'postgresqllogo.webp', 'langchainlogo.webp', 'fastapilogo.webp']
+    },
+    {
+        title: 'AI Job Application Agent',
+        seoTitle: 'AI Job Agent – Autonomous Candidate Profiler',
+        description: 'Autonomous job hunting agent parsing PDF/DOCX resumes into structured LLM candidate profiles, collecting openings from Greenhouse & Lever, and ranking matches with a hybrid AI matcher backed by PostgreSQL and pgvector with Playwright automation.',
+        seoDescription: 'Automated career assistant parsing resumes with LLMs and performing semantic vector matching across job boards.',
+        url: 'https://github.com/echoistprashant/job',
+        dateCreated: '2026-02-01',
+        techStack: ['pythonlogo.webp', 'fastapilogo.webp', 'postgresqllogo.webp', 'langchainlogo.webp']
+    }
+];
 
-    // --- 1. Person: Central node of the Knowledge Graph ---
+const PRASHANT_STUDIO = [
+    {
+        title: 'Femur Studio: Founding Member',
+        seoTitle: 'Femur Studio – Digital Muscle Architecture',
+        description: 'Founder-led studio building resilient digital products, AI systems, and high-performance applications from Bilaspur to global clients.',
+        seoDescription: 'Founding member at Femur Studio specializing in high-leverage software architectures and AI integrations.',
+        url: 'https://femur.studio/',
+        platform: 'Studio'
+    },
+    {
+        title: 'AI Engineering & Production Systems',
+        seoTitle: 'Production AI Systems & Deterministic Workflows',
+        description: 'Architecting LLM agents, deterministic safety boundaries, and high-throughput API services.',
+        seoDescription: 'Deep dive into production AI engineering, error recovery, and deterministic LLM execution pipelines.',
+        url: 'https://github.com/echoistprashant',
+        platform: 'Engineering'
+    }
+];
+
+const PRASHANT_FAQS = [
+    {
+        question: 'Who is Prashant Yadav?',
+        answer: 'Prashant Yadav is an AI Engineer and Full-Stack Developer specializing in machine learning, LLM agentic systems, FastAPI, Python, React, and modern web architectures. He is a Founding Member at Femur Studio.'
+    },
+    {
+        question: 'What technologies does Prashant Yadav use?',
+        answer: 'Prashant works with Python, TypeScript, React, Next.js, FastAPI, PostgreSQL, pgvector, PyTorch, LangChain, Three.js, Docker, and cloud deployments.'
+    },
+    {
+        question: 'How can I contact Prashant Yadav for collaborations or hiring?',
+        answer: 'You can reach Prashant via LinkedIn (linkedin.com/in/echoistprashant), GitHub (github.com/echoistprashant), X (@ConstPrashant), or the Contact room in his 3D portfolio.'
+    }
+];
+
+function buildJsonLd() {
     const person = {
         '@type': 'Person',
         '@id': '#person',
         name: 'Prashant Yadav',
         alternateName: ['echoistprashant', 'ConstPrashant', 'Prashant AI'],
-        url: '/',
+        url: 'https://prashantyadav.dev/',
         jobTitle: 'AI Engineer',
-        description: globalInfo?.aboutMe || "AI engineer who builds intelligent, production-ready applications using machine learning and large language models. Founding Member at Femur Studio.",
+        description: PRASHANT_GLOBAL.aboutMe,
         knowsAbout: ['Python', 'TypeScript', 'React', 'Next.js', 'FastAPI', 'PostgreSQL', 'PyTorch', 'LLMs', 'Agentic AI', 'Docker', 'Machine Learning', 'Three.js'],
         sameAs: [
-            globalInfo?.linkedinUrl || 'https://www.linkedin.com/in/echoistprashant/',
-            globalInfo?.githubUrl || 'https://github.com/echoistprashant',
-            globalInfo?.instagramUrl || 'https://www.instagram.com/echoistprashant/',
-            globalInfo?.xUrl || 'https://x.com/ConstPrashant',
-            globalInfo?.tiktokUrl,
-            globalInfo?.youtubeUrl
-        ].filter(Boolean)
+            PRASHANT_GLOBAL.linkedinUrl,
+            PRASHANT_GLOBAL.githubUrl,
+            PRASHANT_GLOBAL.xUrl
+        ]
     };
-    graph.push(person);
 
-    // --- 2. WebSite ---
     const website = {
         '@type': 'WebSite',
         '@id': '#website',
-        url: '/',
-        name: globalInfo?.siteTitle || 'Prashant Yadav | AI Engineer & Developer Portfolio',
-        description: globalInfo?.siteDescription || 'Interactive 3D Portfolio by Prashant Yadav showcasing AI projects and systems.',
+        url: 'https://prashantyadav.dev/',
+        name: PRASHANT_GLOBAL.siteTitle,
+        description: PRASHANT_GLOBAL.siteDescription,
         publisher: { '@id': '#person' }
     };
-    graph.push(website);
 
-    // --- 3. ProfilePage ---
     const profilePage = {
         '@type': 'ProfilePage',
         '@id': '#profilepage',
-        url: '/',
+        url: 'https://prashantyadav.dev/',
         mainEntity: { '@id': '#person' },
         about: { '@id': '#person' }
     };
-    graph.push(profilePage);
 
-    // --- 4. FAQPage (GEO & AI search engine optimizer) ---
-    if (faqList && faqList.length > 0) {
-        const faqPage = {
-            '@type': 'FAQPage',
-            '@id': '#faq',
-            mainEntity: faqList.map(item => ({
-                '@type': 'Question',
-                name: item.question,
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: item.answer
-                }
-            }))
-        };
-        graph.push(faqPage);
-    }
-
-    // --- 5. ItemList: Portfolio Projects (Google rich results for lists) ---
-    if (projects && projects.length > 0) {
-        graph.push({
-            '@type': 'ItemList',
-            '@id': '#projectslist',
-            name: 'Portfolio Projects by Prashant Yadav',
-            description: 'Selected AI engineering and web development projects showcasing Python, FastAPI, React, PyTorch, and LLMs.',
-            numberOfItems: projects.length,
-            itemListElement: projects.map((p, i) => ({
-                '@type': 'ListItem',
-                position: i + 1,
-                item: {
-                    '@type': 'CreativeWork',
-                    name: p.seoTitle || p.title,
-                    description: p.seoDescription || p.description || '',
-                    url: p.url || undefined,
-                    creator: { '@id': '#person' },
-                    ...(p.techStack && p.techStack.length > 0 ? {
-                        keywords: p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')
-                    } : {}),
-                }
-            }))
-        });
-
-        // Individual CreativeWork entries for each project (richer detail)
-        projects.forEach(p => {
-            const projectSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            graph.push({
-                '@type': 'CreativeWork',
-                '@id': `#project-${projectSlug}`,
-                name: p.seoTitle || p.title,
-                description: p.seoDescription || p.description || '',
-                url: p.url || undefined,
-                creator: { '@id': '#person' },
-                ...(p.techStack && p.techStack.length > 0 ? {
-                    keywords: p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')
-                } : {}),
-            });
-        });
-    }
-
-    // --- 6. Studio Content (YouTube -> VideoObject, Blog -> Article, TikTok -> VideoObject) ---
-    if (studio && studio.length > 0) {
-        studio.forEach((s, idx) => {
-            const studioSlug = `studio-item-${idx}`;
-            if (s.platform === 'youtube') {
-                let embedUrl = undefined;
-                if (s.url) {
-                    const ytMatch = s.url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^"&?\/\s]{11})/);
-                    if (ytMatch && ytMatch[1]) {
-                        embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
-                    }
-                }
-
-                graph.push({
-                    '@type': 'VideoObject',
-                    '@id': `#${studioSlug}`,
-                    name: s.seoTitle || s.title,
-                    description: s.seoDescription || s.description || '',
-                    url: s.url || undefined,
-                    contentUrl: s.url || undefined,
-                    ...(embedUrl ? { embedUrl } : {}),
-                    thumbnailUrl: s.thumbnailUrl || '/og-image.webp',
-                    ...(s.duration ? { duration: `PT${s.duration.replace(':', 'M')}S` } : {}),
-                    ...(s.date ? { uploadDate: formatIsoDate(s.date) } : {}),
-                    ...(s.views ? { interactionStatistic: { '@type': 'InteractionCounter', interactionType: 'https://schema.org/WatchAction', userInteractionCount: s.views } } : {}),
-                    author: { '@id': '#person' },
-                });
-            } else if (s.platform === 'blog') {
-                graph.push({
-                    '@type': 'Article',
-                    '@id': `#${studioSlug}`,
-                    headline: s.seoTitle || s.title,
-                    description: s.seoDescription || s.description || '',
-                    url: s.url || undefined,
-                    image: s.thumbnailUrl || '/og-image.webp',
-                    ...(s.date ? { datePublished: formatIsoDate(s.date) } : {}),
-                    ...(s.readTime ? { timeRequired: `PT${s.readTime.replace(' min', '')}M` } : {}),
-                    author: { '@id': '#person' },
-                });
-            } else if (s.platform === 'tiktok') {
-                graph.push({
-                    '@type': 'VideoObject',
-                    '@id': `#${studioSlug}`,
-                    name: s.seoTitle || s.title,
-                    description: s.seoDescription || s.description || '',
-                    url: s.url || undefined,
-                    contentUrl: s.url || undefined,
-                    thumbnailUrl: s.thumbnailUrl || '/og-image.webp',
-                    ...(s.date ? { uploadDate: formatIsoDate(s.date) } : {}),
-                    ...(s.views ? { interactionStatistic: { '@type': 'InteractionCounter', interactionType: 'https://schema.org/WatchAction', userInteractionCount: s.views } } : {}),
-                    ...(s.likes ? { aggregateRating: { '@type': 'AggregateRating', ratingCount: s.likes } } : {}),
-                    author: { '@id': '#person' },
-                });
-            } else if (s.platform === 'instagram' || s.platform === 'x' || s.platform === 'linkedin') {
-                graph.push({
-                    '@type': 'SocialMediaPosting',
-                    '@id': `#${studioSlug}`,
-                    headline: s.seoTitle || s.title,
-                    description: s.seoDescription || s.description || '',
-                    url: s.url || undefined,
-                    image: s.thumbnailUrl || '/og-image.webp',
-                    ...(s.date ? { datePublished: formatIsoDate(s.date) } : {}),
-                    ...(s.likes ? { interactionStatistic: { '@type': 'InteractionCounter', interactionType: 'https://schema.org/LikeAction', userInteractionCount: s.likes } } : {}),
-                    author: { '@id': '#person' },
-                });
-            } else if (s.platform === 'codrops') {
-                graph.push({
-                    '@type': 'Article',
-                    '@id': `#${studioSlug}`,
-                    headline: s.seoTitle || s.title,
-                    description: s.seoDescription || s.description || '',
-                    url: s.url || undefined,
-                    image: s.thumbnailUrl || '/og-image.webp',
-                    ...(s.date ? { datePublished: formatIsoDate(s.date) } : {}),
-                    author: { '@id': '#person' },
-                });
+    const faqPage = {
+        '@type': 'FAQPage',
+        '@id': '#faq',
+        mainEntity: PRASHANT_FAQS.map(item => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer
             }
-        });
-    }
+        }))
+    };
 
-    // --- 7. Awards / Honors ---
-    if (awards && awards.length > 0) {
-        const categoryLabels = { sotd: 'Site of the Day', sotm: 'Site of the Month', other: 'Honorable Mention' };
-        graph.push({
-            '@type': 'ItemList',
-            '@id': '#awardslist',
-            name: 'Honors and Recognitions — Prashant Yadav',
-            numberOfItems: awards.length,
-            itemListElement: awards.map((a, i) => ({
-                '@type': 'ListItem',
-                position: i + 1,
-                item: {
-                    '@type': 'CreativeWork',
-                    name: `${categoryLabels[a.category] || a.category} — ${a.seoTitle || a.title}`,
-                    ...(a.date ? { dateCreated: formatIsoDate(a.date) } : {}),
-                    url: a.url || undefined,
-                    description: a.seoDescription || undefined,
-                    award: categoryLabels[a.category] || a.category,
-                    creator: { '@id': '#person' },
-                }
-            }))
-        });
-    }
+    const projectsList = {
+        '@type': 'ItemList',
+        '@id': '#projectslist',
+        name: "Prashant Yadav's Portfolio Projects",
+        description: 'Production AI engineering projects, agents, and web applications created by Prashant Yadav.',
+        numberOfItems: PRASHANT_PROJECTS.length,
+        itemListElement: PRASHANT_PROJECTS.map((p, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            item: {
+                '@type': 'SoftwareApplication',
+                name: p.seoTitle || p.title,
+                description: p.seoDescription || p.description,
+                url: p.url,
+                applicationCategory: 'AI Application',
+                author: { '@id': '#person' }
+            }
+        }))
+    };
 
     return {
         '@context': 'https://schema.org',
-        '@graph': graph
+        '@graph': [person, website, profilePage, faqPage, projectsList]
     };
 }
 
-// Helper to generate the llms.txt content in clean Markdown
-function buildLlmsTxt(globalInfo, projects, studio, awards, faqList) {
-    const siteTitle = globalInfo?.siteTitle || 'Prashant Yadav | AI Engineer & Developer Portfolio';
-    const siteDescription = globalInfo?.siteDescription || 'Interactive 3D developer portfolio by Prashant Yadav. Explore AI engineering projects, LLMs, and agentic workflows.';
-    const aboutMe = globalInfo?.aboutMe || 'AI engineer who builds intelligent, production-ready applications using machine learning and large language models. Founding Member at Femur Studio.';
-
-    let content = `# ${siteTitle}\n`;
-    content += `> ${siteDescription}\n\n`;
+function buildLlmsTxt() {
+    let content = `# ${PRASHANT_GLOBAL.siteTitle}\n`;
+    content += `> ${PRASHANT_GLOBAL.siteDescription}\n\n`;
 
     content += `## Biography / About Me\n`;
-    content += `${aboutMe}\n\n`;
+    content += `${PRASHANT_GLOBAL.aboutMe}\n\n`;
 
     content += `## Core Technologies & Skills\n`;
     content += `- Python, TypeScript, React, Next.js, FastAPI, PostgreSQL, PyTorch, LLMs, Agentic AI, Docker, Machine Learning, WebGL.\n\n`;
 
-    if (projects && projects.length > 0) {
-        content += `## Selected Portfolio Projects\n`;
-        projects.forEach(p => {
-            const tech = p.techStack ? ` (Tech: ${p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')})` : '';
-            content += `- [${p.seoTitle || p.title}](${p.url || 'https://prashantyadav.dev'}): ${p.seoDescription || p.description || ''}${tech}\n`;
-        });
-        content += `\n`;
-    }
+    content += `## Selected Portfolio Projects\n`;
+    PRASHANT_PROJECTS.forEach(p => {
+        const tech = p.techStack ? ` (Tech: ${p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')})` : '';
+        content += `- [${p.seoTitle || p.title}](${p.url}): ${p.seoDescription || p.description}${tech}\n`;
+    });
+    content += `\n`;
 
-    if (studio && studio.length > 0) {
-        content += `## Studio Content & Publications\n`;
-        studio.forEach(s => {
-            content += `- [${s.seoTitle || s.title} (${s.platform})](${s.url || 'https://prashantyadav.dev'}): ${s.seoDescription || s.description || ''}\n`;
-        });
-        content += `\n`;
-    }
+    content += `## Studio Content & Engagements\n`;
+    PRASHANT_STUDIO.forEach(s => {
+        content += `- [${s.seoTitle || s.title} (${s.platform})](${s.url}): ${s.seoDescription || s.description}\n`;
+    });
+    content += `\n`;
 
-    if (awards && awards.length > 0) {
-        content += `## Honors & Achievements\n`;
-        const categoryLabels = { sotd: 'Site of the Day', sotm: 'Site of the Month', other: 'Honorable Mention' };
-        awards.forEach(a => {
-            const category = categoryLabels[a.category] || a.category;
-            content += `- **${category}** — [${a.seoTitle || a.title}](${a.url || 'https://prashantyadav.dev'}): Awarded on ${a.date || 'unknown'}. ${a.seoDescription || ''}\n`;
-        });
-        content += `\n`;
-    }
-
-    if (faqList && faqList.length > 0) {
-        content += `## Frequently Asked Questions (FAQ)\n`;
-        faqList.forEach(item => {
-            content += `- **${item.question}**\n`;
-            content += `  ${item.answer.replace(/\n/g, '\n  ')}\n`;
-        });
-    }
+    content += `## Frequently Asked Questions (FAQ)\n`;
+    PRASHANT_FAQS.forEach(item => {
+        content += `- **${item.question}**\n`;
+        content += `  ${item.answer}\n`;
+    });
 
     return content;
 }
 
 export function generateSeoHtml() {
-    let cachedLlmsContent = '';
-
-    async function getLlmsContent() {
-        if (!cachedLlmsContent) {
-            try {
-                const [globalInfo, projects, studio, awards, faqList] = await Promise.all([
-                    sanityClient.fetch(`*[_id == "globalInfo"][0]`),
-                    sanityClient.fetch(`*[_type == "galleryProject"]`),
-                    sanityClient.fetch(`*[_type == "studioItem"]`),
-                    sanityClient.fetch(`*[_type == "awardCertificate"]`),
-                    sanityClient.fetch(`*[_type == "faq"]`)
-                ]);
-                cachedLlmsContent = buildLlmsTxt(globalInfo, projects, studio, awards, faqList);
-            } catch (e) {
-                console.error('SEO Plugin Error: Failed to fetch Sanity data for llms.txt', e);
-                cachedLlmsContent = `# Prashant Yadav\n> AI Engineer & Full-Stack Developer\n`;
-            }
-        }
-        return cachedLlmsContent;
-    }
+    const llmsContent = buildLlmsTxt();
+    const jsonLdSchemas = buildJsonLd();
+    const jsonLdScript = `\n  <!-- Dynamic Structured Data (JSON-LD) — Prashant Yadav Portfolio -->\n  <script type="application/ld+json">\n${JSON.stringify(jsonLdSchemas, null, 2)}\n  </script>\n`;
 
     return {
-        name: 'sanity-seo-plugin',
+        name: 'prashant-seo-plugin',
 
-        // Serve llms.txt in local development mode
+        // Serve llms.txt in development mode
         configureServer(server) {
-            server.middlewares.use(async (req, res, next) => {
+            server.middlewares.use((req, res, next) => {
                 if (req.url === '/llms.txt') {
-                    const content = await getLlmsContent();
                     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-                    res.end(content);
+                    res.end(llmsContent);
                 } else {
                     next();
                 }
             });
         },
 
-        // This hook runs when Vite generates or serves index.html
-        async transformIndexHtml(html) {
-            try {
-                // Fetch all data in parallel
-                const [globalInfo, projects, studio, awards, faqList] = await Promise.all([
-                    sanityClient.fetch(`*[_id == "globalInfo"][0]`),
-                    sanityClient.fetch(`*[_type == "galleryProject"]`),
-                    sanityClient.fetch(`*[_type == "studioItem"] { ..., "thumbnailUrl": frontTexture.asset->url }`),
-                    sanityClient.fetch(`*[_type == "awardCertificate"]`),
-                    sanityClient.fetch(`*[_type == "faq"]`)
-                ]);
+        // Transform index.html at build & dev serve time
+        transformIndexHtml(html) {
+            const siteTitle = PRASHANT_GLOBAL.siteTitle;
+            const siteDescription = PRASHANT_GLOBAL.siteDescription;
 
-                // Fallback values if globalInfo is not yet created in Sanity
-                const siteTitle = globalInfo?.siteTitle || 'Prashant Yadav | AI Engineer & Developer Portfolio';
-                const siteDescription = globalInfo?.siteDescription || 'Interactive 3D developer portfolio by Prashant Yadav. Explore AI engineering projects, LLMs, and agentic workflows.';
-                const aboutMe = globalInfo?.aboutMe || 'AI engineer who builds intelligent, production-ready applications using machine learning and large language models. Founding Member at Femur Studio.';
+            // 1. Force exact <title> tag
+            let transformedHtml = html.replace(
+                /<title>(.*?)<\/title>/,
+                `<title>${siteTitle}</title>`
+            );
 
-                // Cache llms.txt content for later bundle emission
-                cachedLlmsContent = buildLlmsTxt(globalInfo, projects, studio, awards, faqList);
-
-                // ====== PART 1: Build the semantic HTML string ======
-                let seoHtml = `\n<div id="seo-content" class="sr-only-seo">\n`;
-                
-                seoHtml += `  <header>\n`;
-                seoHtml += `    <h1>${siteTitle}</h1>\n`;
-                seoHtml += `    <p>${siteDescription}</p>\n`;
-                seoHtml += `  </header>\n`;
-
-                seoHtml += `  <section id="about">\n`;
-                seoHtml += `    <h2>About Me</h2>\n`;
-                seoHtml += `    <p>${aboutMe}</p>\n`;
-                if (globalInfo?.githubUrl) seoHtml += `    <a href="${globalInfo.githubUrl}">GitHub</a>\n`;
-                if (globalInfo?.linkedinUrl) seoHtml += `    <a href="${globalInfo.linkedinUrl}">LinkedIn</a>\n`;
-                seoHtml += `  </section>\n`;
-
-                if (projects && projects.length > 0) {
-                    seoHtml += `  <section id="projects">\n    <h2>Projects</h2>\n    <ul>\n`;
-                    projects.forEach(p => {
-                        seoHtml += `      <li>\n        <h3>${p.seoTitle || p.title}</h3>\n        <p>${p.seoDescription || p.description || ''}</p>\n        ${p.url ? `<a href="${p.url}">Visit ${p.seoTitle || p.title}</a>\n` : ''}      </li>\n`;
-                    });
-                    seoHtml += `    </ul>\n  </section>\n`;
-                }
-
-                if (studio && studio.length > 0) {
-                    seoHtml += `  <section id="studio">\n    <h2>The Studio (Content)</h2>\n    <ul>\n`;
-                    studio.forEach(s => {
-                        seoHtml += `      <li>\n        <h3>${s.seoTitle || s.title} (${s.platform})</h3>\n        <p>${s.seoDescription || s.description || ''}</p>\n        ${s.url ? `<a href="${s.url}">View Content</a>\n` : ''}      </li>\n`;
-                    });
-                    seoHtml += `    </ul>\n  </section>\n`;
-                }
-
-                if (awards && awards.length > 0) {
-                    seoHtml += `  <section id="awards">\n    <h2>Awards & Certificates</h2>\n    <ul>\n`;
-                    awards.forEach(a => {
-                        seoHtml += `      <li>\n        <h3>${a.seoTitle || a.title}</h3>\n        <p>${a.category} - ${a.date}</p>\n        <p>${a.seoDescription || ''}</p>\n        ${a.url ? `<a href="${a.url}">Link</a>\n` : ''}      </li>\n`;
-                    });
-                    seoHtml += `    </ul>\n  </section>\n`;
-                }
-
-                // FAQ Section (GEO/AI search optimizer fallback)
-                if (faqList && faqList.length > 0) {
-                    seoHtml += `  <section id="faq">\n`;
-                    seoHtml += `    <h2>Frequently Asked Questions (FAQ)</h2>\n`;
-                    faqList.forEach(item => {
-                        seoHtml += `    <article>\n`;
-                        seoHtml += `      <h3>${item.question}</h3>\n`;
-                        seoHtml += `      <p>${item.answer}</p>\n`;
-                        seoHtml += `    </article>\n`;
-                    });
-                    seoHtml += `  </section>\n`;
-                }
-
-                seoHtml += `</div>\n`;
-
-                // ====== PART 2: Build dynamic JSON-LD ======
-                const jsonLdSchemas = buildJsonLd(globalInfo, projects, studio, awards, faqList);
-                const jsonLdScript = `\n  <!-- Dynamic Structured Data (JSON-LD) — generated from Sanity at build time -->\n  <script type="application/ld+json">\n${JSON.stringify(jsonLdSchemas, null, 2)}\n  </script>\n`;
-
-                // ====== PART 3: Transform HTML ======
-                // Update the <title> tag
-                let transformedHtml = html.replace(
-                    /<title>(.*?)<\/title>/,
-                    `<title>${siteTitle}</title>`
+            // 2. Force exact meta description
+            if (transformedHtml.includes('<meta name="description"')) {
+                transformedHtml = transformedHtml.replace(
+                    /<meta name="description" content="(.*?)"\s*\/?>/,
+                    `<meta name="description" content="${siteDescription}" />`
                 );
-                
-                // Add or replace meta description
-                if (transformedHtml.includes('<meta name="description"')) {
-                    transformedHtml = transformedHtml.replace(
-                        /<meta name="description" content="(.*?)"\s*\/?>/,
-                        `<meta name="description" content="${siteDescription}" />`
-                    );
-                } else {
-                    transformedHtml = transformedHtml.replace(
-                        '</head>',
-                        `  <meta name="description" content="${siteDescription}" />\n</head>`
-                    );
-                }
-
-                // Update Open Graph dynamic metadata
-                transformedHtml = transformedHtml
-                    .replace(
-                        /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i,
-                        `<meta property="og:title" content="${siteTitle}" />`
-                    )
-                    .replace(
-                        /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i,
-                        `<meta property="og:description" content="${siteDescription}" />`
-                    );
-
-                // Update Twitter card dynamic metadata
-                transformedHtml = transformedHtml
-                    .replace(
-                        /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i,
-                        `<meta name="twitter:title" content="${siteTitle}" />`
-                    )
-                    .replace(
-                        /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i,
-                        `<meta name="twitter:description" content="${siteDescription}" />`
-                    );
-
-                // Inject dynamic JSON-LD right before </head> (next to the existing static one)
-                transformedHtml = transformedHtml.replace('</head>', `${jsonLdScript}</head>`);
-
-                // Replace the static placeholder with the dynamic one to prevent duplicate #seo-content and double h1s
-                if (transformedHtml.includes('id="seo-content"')) {
-                    transformedHtml = transformedHtml.replace(
-                        /<div id="seo-content" class="sr-only-seo">[\s\S]*?<\/div>/,
-                        seoHtml
-                    );
-                } else {
-                    // Fallback injection if the template doesn't contain the static block
-                    transformedHtml = transformedHtml.replace('</body>', `${seoHtml}</body>`);
-                }
-
-                return transformedHtml;
-            } catch (error) {
-                console.error('SEO Plugin Error: Failed to fetch Sanity data', error);
-                // Return original HTML on failure so we don't break the build
-                return html;
             }
+
+            // 3. Force Open Graph meta tags
+            transformedHtml = transformedHtml
+                .replace(
+                    /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i,
+                    `<meta property="og:title" content="${siteTitle}" />`
+                )
+                .replace(
+                    /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i,
+                    `<meta property="og:description" content="${siteDescription}" />`
+                );
+
+            // 4. Force Twitter card meta tags
+            transformedHtml = transformedHtml
+                .replace(
+                    /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i,
+                    `<meta name="twitter:title" content="${siteTitle}" />`
+                )
+                .replace(
+                    /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i,
+                    `<meta name="twitter:description" content="${siteDescription}" />`
+                );
+
+            // 5. Inject JSON-LD right before </head>
+            transformedHtml = transformedHtml.replace('</head>', `${jsonLdScript}</head>`);
+
+            // 6. Build semantic HTML section for crawlers
+            let seoHtml = `\n<div id="seo-content" class="sr-only-seo">\n`;
+            seoHtml += `  <header>\n    <h1>${siteTitle}</h1>\n    <p>${siteDescription}</p>\n  </header>\n`;
+            seoHtml += `  <section id="about">\n    <h2>About Prashant Yadav</h2>\n    <p>${PRASHANT_GLOBAL.aboutMe}</p>\n    <a href="${PRASHANT_GLOBAL.githubUrl}">GitHub</a>\n    <a href="${PRASHANT_GLOBAL.linkedinUrl}">LinkedIn</a>\n  </section>\n`;
+            seoHtml += `  <section id="projects">\n    <h2>Featured AI Projects</h2>\n    <ul>\n`;
+            PRASHANT_PROJECTS.forEach(p => {
+                seoHtml += `      <li>\n        <h3>${p.seoTitle}</h3>\n        <p>${p.seoDescription}</p>\n        <a href="${p.url}">View Project on GitHub</a>\n      </li>\n`;
+            });
+            seoHtml += `    </ul>\n  </section>\n</div>\n`;
+
+            if (transformedHtml.includes('id="seo-content"')) {
+                transformedHtml = transformedHtml.replace(
+                    /<div id="seo-content" class="sr-only-seo">[\s\S]*?<\/div>/,
+                    seoHtml
+                );
+            } else {
+                transformedHtml = transformedHtml.replace('</body>', `${seoHtml}</body>`);
+            }
+
+            return transformedHtml;
         },
 
-        // Emit llms.txt to the build output directory
-        async generateBundle() {
-            const content = await getLlmsContent();
+        // Emit llms.txt to dist bundle
+        generateBundle() {
             this.emitFile({
                 type: 'asset',
                 fileName: 'llms.txt',
-                source: content
+                source: llmsContent
             });
         }
     };
