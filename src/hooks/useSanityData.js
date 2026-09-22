@@ -4,9 +4,8 @@ import { useTexture } from '@react-three/drei';
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 
-// Flaga bezpieczeństwa: Jeśli użytkownik nie wpisał jeszcze Project ID, 
-// hooki zwrócą null, co pozwoli na załadowanie danych hardcodowanych (fallback).
-export const isSanityConfigured = sanityClient.config().projectId !== 'YOUR_PROJECT_ID';
+// Master Data Mode: Sanity CMS disabled (using local data)
+export const isSanityConfigured = false;
 
 // Globalny cache dla danych z Sanity
 const cache = {

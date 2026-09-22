@@ -204,18 +204,22 @@ const Preloader = ({ onComplete, ready }) => {
 
 
   // ----------------------------------------
-  // SMOOTH LOADING LOGIC
+  // SMOOTH LOADING LOGIC & FAILSAFES
   // ----------------------------------------
+  // Ultimate safety ceiling: after 2.5s, force progress to 100%
+  useEffect(() => {
+    const ceilingTimer = setTimeout(() => {
+      setTargetProgress(100);
+    }, 2500);
+    return () => clearTimeout(ceilingTimer);
+  }, []);
+
   useEffect(() => {
     let newTarget = 0;
-    if (active) {
-      newTarget = (realProgress / 100) * 85;
+    if (ready || !active || realProgress >= 99) {
+      newTarget = 100;
     } else {
-      if (ready) {
-        newTarget = 100;
-      } else {
-        newTarget = 90;
-      }
+      newTarget = Math.min(95, Math.round((realProgress / 100) * 95));
     }
 
     setTargetProgress(prev => Math.max(prev, newTarget));
@@ -224,16 +228,16 @@ const Preloader = ({ onComplete, ready }) => {
   // Handle Pencil Sound & Exit checking dynamically
   const checkProgressTriggers = (val) => {
     // Pencil Sound
-    if (val < 99 && !pencilSoundRef.current) {
+    if (val < 98 && !pencilSoundRef.current) {
       pencilSoundRef.current = play('pencil', { loop: true, volume: 0.5 });
     }
-    else if (val >= 99 && pencilSoundRef.current) {
+    else if (val >= 98 && pencilSoundRef.current) {
       pencilSoundRef.current.stop();
       pencilSoundRef.current = null;
     }
 
-    // Exit phase
-    if (val >= 99.5 && readyRef.current && !exitStarted.current) {
+    // Exit phase: trigger when 98.5% reached
+    if (val >= 98.5 && !exitStarted.current) {
       exitStarted.current = true;
       startExit();
     }
@@ -253,13 +257,13 @@ const Preloader = ({ onComplete, ready }) => {
     let duration = 0.5;
 
     if (distance > 60) {
-      duration = 1.5;
+      duration = 1.2;
     } else if (distance > 30) {
-      duration = 1.0;
+      duration = 0.8;
     } else if (distance > 10) {
-      duration = 0.6;
+      duration = 0.5;
     } else if (distance > 0) {
-      duration = 0.4;
+      duration = 0.3;
     }
 
     gsap.to(trackerRef.current, {
@@ -282,6 +286,12 @@ const Preloader = ({ onComplete, ready }) => {
         if (pathRightRef.current) pathRightRef.current.style.strokeDashoffset = strokeDashoffset;
 
         checkProgressTriggers(val);
+      },
+      onComplete: () => {
+        if (targetProgress >= 99 && !exitStarted.current) {
+          exitStarted.current = true;
+          startExit();
+        }
       }
     });
 
@@ -293,9 +303,9 @@ const Preloader = ({ onComplete, ready }) => {
   // ----------------------------------------
   const exitStarted = useRef(false);
 
-  // Fallback trigger if ready becomes true AFTER 99.5% reached
+  // Fallback trigger if ready becomes true AFTER progress reached
   useEffect(() => {
-    if (displayProgressRef.current >= 99.5 && ready && !exitStarted.current) {
+    if (displayProgressRef.current >= 98.5 && ready && !exitStarted.current) {
       exitStarted.current = true;
       startExit();
     }

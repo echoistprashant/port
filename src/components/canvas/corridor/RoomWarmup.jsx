@@ -1,4 +1,4 @@
-import { useRef, useState, Suspense } from 'react';
+import { useRef, useState, useEffect, Suspense } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 
 // Eagerly import all room components
@@ -28,6 +28,18 @@ const RoomWarmup = ({ onWarmupComplete, isLowTier }) => {
     // Wait for rooms to render a few frames, then compile and unmount
     const warmupStart = useRef(performance.now());
 
+    // Absolute failsafe: guarantee warmup signals complete within 1.5s regardless of GPU load
+    useEffect(() => {
+        const safetyTimer = setTimeout(() => {
+            if (!completeFired.current) {
+                completeFired.current = true;
+                setIsDone(true);
+                onWarmupComplete?.();
+            }
+        }, 1500);
+        return () => clearTimeout(safetyTimer);
+    }, [onWarmupComplete]);
+
     useFrame(() => {
         if (isDone || completeFired.current) return;
 
@@ -44,8 +56,6 @@ const RoomWarmup = ({ onWarmupComplete, isLowTier }) => {
 
             const finishWarmup = () => {
                 const warmupDuration = ((performance.now() - warmupStart.current) / 1000).toFixed(2);
-                // console.info(`🔥 GPU/Shader Warmup Complete: ${warmupDuration}s ${isLowTier ? '(Bypassed for LOW tier)' : ''}`);
-                
                 requestAnimationFrame(() => {
                     setIsDone(true);
                     onWarmupComplete?.();

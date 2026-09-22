@@ -1,17 +1,20 @@
 import { createClient } from '@sanity/client';
 import { createImageUrlBuilder } from '@sanity/image-url';
 
-export const sanityClient = createClient({
-    projectId: 'YOUR_PROJECT_ID', // Disabled - using local master data
-    dataset: 'production',
-    useCdn: true,
-    apiVersion: '2024-03-01',
+// Local Master Data Mode: External Sanity CMS disabled
+export const isSanityConfigured = false;
+export const sanityClient = null;
+
+// Safe mock functions so existing imports don't fail
+export const urlFor = () => ({
+    width: () => ({
+        quality: () => ({
+            auto: () => ({
+                url: () => null
+            })
+        })
+    })
 });
-
-const builder = createImageUrlBuilder(sanityClient);
-
-// Funkcja pomocnicza do generowania adresów URL obrazków z Sanity
-export const urlFor = (source) => builder.image(source);
 
 // Funkcja pomocnicza do zamiany domeny Sanity na proxy w Cloudflare
 export const getProxyUrl = (imageBuilder) => {
