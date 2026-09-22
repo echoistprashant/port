@@ -88,6 +88,54 @@
     }
 }
 
+// === RESUME DOWNLOAD BUTTON ===
+.resume-btn {
+    width: auto;
+    min-width: 96px;
+    height: 55px;
+    padding: 8px 14px 0 12px;
+    gap: 7px;
+    text-decoration: none;
+    color: #1a1a1a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon-resume {
+        width: 18px;
+        height: 18px;
+        stroke: #1a1a1a;
+        stroke-width: 2;
+        fill: none;
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+    }
+
+    .resume-label {
+        font-family: 'CabinSketch-Bold', 'CabinSketch', cursive, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        color: #1a1a1a;
+        padding-top: 1px;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+
+        .icon-resume {
+            transform: translateY(1.5px);
+        }
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
 // === BACK BUTTON ===
 .back-btn {
     position: fixed;
@@ -708,6 +756,23 @@
     .nav-btn {
         width: 45px;
         height: 50px;
+    }
+
+    .resume-btn {
+        min-width: 82px;
+        height: 50px;
+        padding: 6px 10px 0 8px;
+        gap: 5px;
+
+        .icon-resume {
+            width: 16px;
+            height: 16px;
+        }
+
+        .resume-label {
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
     }
 
     .back-btn {

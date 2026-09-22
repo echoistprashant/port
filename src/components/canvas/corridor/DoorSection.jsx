@@ -1250,6 +1250,36 @@ const DoorSection = ({
                                 />
                             </mesh>
                         </group>
+
+                        {/* "Knock to open" plaque on door face */}
+                        <group
+                            position={[doorMeshX, 0.22, 0.02]}
+                            onClick={handleClick}
+                            onPointerEnter={handlePointerEnter}
+                            onPointerLeave={handlePointerLeave}
+                        >
+                            <mesh>
+                                <planeGeometry args={[0.62, 0.22]} />
+                                <meshBasicMaterial
+                                    color="#ffffff"
+                                    map={signTexture}
+                                    transparent={true}
+                                    alphaTest={0.1}
+                                    roughness={0.9}
+                                />
+                            </mesh>
+                            <Text
+                                font="/fonts/CabinSketch-Bold.ttf"
+                                fontSize={0.085}
+                                color="#151515"
+                                anchorX="center"
+                                anchorY="middle"
+                                position={[0, 0.005, 0.008]}
+                                letterSpacing={0.02}
+                            >
+                                Knock to open
+                            </Text>
+                        </group>
                     </group>
                 </group>
 

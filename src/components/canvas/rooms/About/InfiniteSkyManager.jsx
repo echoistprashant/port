@@ -1001,11 +1001,11 @@ const BALLOON_CONFIG = [
 
     // Medium balloons - scattered around
     { texture: '/textures/about/fastapi_balon.webp', paintedTexture: '/textures/about/fastapi_balon_painted.webp', label: 'FastAPI', size: 'medium', x: -4, y: 1, z: -0.3, phase: 0.8 },
-    { texture: '/textures/about/nextjssrednibalon.webp', paintedTexture: '/textures/about/nextjssrednibalon_painted.webp', label: 'Next.js', size: 'medium', x: 4, y: 1.5, z: -0.2, phase: 2.2 },
-    { texture: '/textures/about/reactduzybalon.webp', paintedTexture: '/textures/about/reactduzybalon_painted.webp', label: 'React', size: 'medium', x: 0, y: 0.5, z: -0.4, phase: 4 },
+    { texture: '/textures/about/nextjs_balon.webp', paintedTexture: '/textures/about/nextjs_balon_painted.webp', label: 'Next.js', size: 'medium', x: 4, y: 1.5, z: -0.2, phase: 2.2 },
+    { texture: '/textures/about/react_balon.webp', paintedTexture: '/textures/about/react_balon_painted.webp', label: 'React', size: 'medium', x: 0, y: 0.5, z: -0.4, phase: 4 },
 
     // Small balloons - background accents
-    { texture: '/textures/about/gitmalybalon.webp', paintedTexture: '/textures/about/gitmalybalon_painted.webp', label: 'Git & GitHub', size: 'small', x: -5.5, y: 2.5, z: -0.8, phase: 1.2 },
+    { texture: '/textures/about/git_balon.webp', paintedTexture: '/textures/about/git_balon_painted.webp', label: 'Git & GitHub', size: 'small', x: -5.5, y: 2.5, z: -0.8, phase: 1.2 },
     { texture: '/textures/about/postgresql_balon.webp', paintedTexture: '/textures/about/postgresql_balon_painted.webp', label: 'PostgreSQL', size: 'small', x: 5.5, y: 3, z: -0.7, phase: 2.8 },
     { texture: '/textures/about/openai_balon.webp', paintedTexture: '/textures/about/openai_balon_painted.webp', label: 'AI Agents', size: 'small', x: -3, y: 4.5, z: -0.5, phase: 3.5 },
     { texture: '/textures/about/docker_balon.webp', paintedTexture: '/textures/about/docker_balon_painted.webp', label: 'Docker & Cloud', size: 'small', x: 3.5, y: 4, z: -0.6, phase: 4.5 },
@@ -1054,16 +1054,16 @@ const SkillBalloon = ({ config, revealFactorRef, spreadFactorRef, timeRef }) => 
         }
     };
 
-    // LEGACY FIX: Use original aspect ratios from BALLOON_CONFIG or hardcoded for categories
+    // Use 0.5 aspect ratio for 512x1024 balloons, or specific legacy aspects
     const legacyAspects = {
         'reactduzybalon.webp': 736 / 1447,
         'threejsduzybalon.webp': 1141 / 1964,
-        'GSAPduzybalon.webp': 1.0, // GSAP balloon is square
-        'default_small_medium': 631 / 1482 // Common ratio for others
+        'GSAPduzybalon.webp': 1.0,
+        'default_small_medium': 0.5
     };
     
     const filename = config.texture.split('/').pop();
-    const aspect = legacyAspects[filename] || legacyAspects['default_small_medium'];
+    const aspect = legacyAspects[filename] || 0.5;
     const baseHeight = SIZE_MULTIPLIERS[config.size];
 
     const outerGroupRef = useRef();

@@ -233,58 +233,77 @@ const NavigationUI = () => {
                 </button>
             )}
 
-            {/* Right side controls - Only visible after entering */}
-            {hasEntered && (
-                <div className={`nav-controls ${isMenuOpen || isAudioMenuOpen ? 'menu-open' : ''} ${isUIHidden ? 'ui-hidden' : ''}`}>
-                    {/* Hamburger Menu Button */}
-                    <button
-                        className={`nav-btn hamburger-btn ${isMenuOpen ? 'open' : ''}`}
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle menu"
-                        aria-expanded={isMenuOpen}
-                    >
-                        <div className="hamburger-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    {/* Audio Toggle Button */}
-                    <button
-                        className={`nav-btn audio-btn ${isAudioMenuOpen ? 'open' : ''}`}
-                        onClick={() => setIsAudioMenuOpen(!isAudioMenuOpen)}
-                        aria-label="Audio Settings"
-                        aria-expanded={isAudioMenuOpen}
-                    >
-                        {isMuted ? (
-                            <svg viewBox="0 0 24 24" className="icon-audio">
-                                <path d="M11 5L6 9H2v6h4l5 4V5z" />
-                                <line x1="23" y1="9" x2="17" y2="15" />
-                                <line x1="17" y1="9" x2="23" y2="15" />
+            {/* Right side controls - Always visible */}
+            <div className={`nav-controls ${isMenuOpen || isAudioMenuOpen ? 'menu-open' : ''} ${isUIHidden ? 'ui-hidden' : ''}`}>
+                {/* Resume Download Button */}
+                <a
+                    href="/resume.pdf"
+                    download="Prashant_Yadav_Resume.pdf"
+                    className="nav-btn resume-btn"
+                    aria-label="Download Resume"
+                    title="Download Prashant Yadav's Resume (PDF)"
+                >
+                    <svg viewBox="0 0 24 24" className="icon-resume">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="12" y1="18" x2="12" y2="12" />
+                        <polyline points="9 15 12 18 15 15" />
+                    </svg>
+                    <span className="resume-label">RESUME</span>
+                </a>
+
+                {hasEntered && (
+                    <>
+                        {/* Hamburger Menu Button */}
+                        <button
+                            className={`nav-btn hamburger-btn ${isMenuOpen ? 'open' : ''}`}
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-label="Toggle menu"
+                            aria-expanded={isMenuOpen}
+                        >
+                            <div className="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                        {/* Audio Toggle Button */}
+                        <button
+                            className={`nav-btn audio-btn ${isAudioMenuOpen ? 'open' : ''}`}
+                            onClick={() => setIsAudioMenuOpen(!isAudioMenuOpen)}
+                            aria-label="Audio Settings"
+                            aria-expanded={isAudioMenuOpen}
+                        >
+                            {isMuted ? (
+                                <svg viewBox="0 0 24 24" className="icon-audio">
+                                    <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                                    <line x1="23" y1="9" x2="17" y2="15" />
+                                    <line x1="17" y1="9" x2="23" y2="15" />
+                                </svg>
+                            ) : (
+                                <svg viewBox="0 0 24 24" className="icon-audio">
+                                    <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                                    <path d="M15 9a5 5 0 0 1 0 6" />
+                                    <path d="M18 5a9 9 0 0 1 0 14" />
+                                </svg>
+                            )}
+                        </button>
+                        {/* Achievements Toggle Button */}
+                        <button
+                            className={`nav-btn achievements-btn ${isAchievementsOpen ? 'open' : ''}`}
+                            onClick={() => setIsAchievementsOpen(!isAchievementsOpen)}
+                            aria-label="Achievements"
+                            aria-expanded={isAchievementsOpen}
+                        >
+                            <svg viewBox="0 0 24 24" className="icon-trophy">
+                                <path d="M8 21h8M12 17v4M7 4h10M5 4h14v5a7 7 0 0 1-7 7 7 7 0 0 1-7-7z" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M5 9H3V6h2" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M19 9h2V6h-2" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                        ) : (
-                            <svg viewBox="0 0 24 24" className="icon-audio">
-                                <path d="M11 5L6 9H2v6h4l5 4V5z" />
-                                <path d="M15 9a5 5 0 0 1 0 6" />
-                                <path d="M18 5a9 9 0 0 1 0 14" />
-                            </svg>
-                        )}
-                    </button>
-                    {/* Achievements Toggle Button */}
-                    <button
-                        className={`nav-btn achievements-btn ${isAchievementsOpen ? 'open' : ''}`}
-                        onClick={() => setIsAchievementsOpen(!isAchievementsOpen)}
-                        aria-label="Achievements"
-                        aria-expanded={isAchievementsOpen}
-                    >
-                        <svg viewBox="0 0 24 24" className="icon-trophy">
-                            <path d="M8 21h8M12 17v4M7 4h10M5 4h14v5a7 7 0 0 1-7 7 7 7 0 0 1-7-7z" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M5 9H3V6h2" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M19 9h2V6h-2" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-            )}
+                        </button>
+                    </>
+                )}
+            </div>
 
             {/* Map Panel - Drops from top when open */}
             {hasEntered && (
